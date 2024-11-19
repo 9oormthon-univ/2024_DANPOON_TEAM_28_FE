@@ -4,7 +4,11 @@ import AlarmIcon from './AlarmIcon';
 
 const Alarm = ({ title, subtitle, pushedAt, type, read }: IAlarmProps) => {
     return (
-        <ListItem>
+        <ListItem
+            sx={{
+                backgroundColor: '#fff',
+            }}
+        >
             <AlarmIcon type={type} read={read} />
             <ListItemText
                 primary={

@@ -17,6 +17,9 @@ const AlarmList = ({
 
     return (
         <List
+            sx={{
+                backgroundColor: 'white',
+            }}
             subheader={
                 <Typography
                     sx={{
