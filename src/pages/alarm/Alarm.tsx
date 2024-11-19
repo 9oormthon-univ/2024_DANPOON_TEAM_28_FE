@@ -1,9 +1,11 @@
 import { IAlarmProps } from '@/types/IAlarmProps';
 import { ListItem, ListItemText, Typography } from '@mui/material';
+import AlarmIcon from './AlarmIcon';
 
 const Alarm = ({ title, subtitle, pushedAt, type, read }: IAlarmProps) => {
     return (
         <ListItem>
+            <AlarmIcon type={type} read={read} />
             <ListItemText
                 primary={
                     <>
