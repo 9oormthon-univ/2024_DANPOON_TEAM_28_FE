@@ -12,7 +12,7 @@ function App() {
     dayjs.extend(tz);
     locale('ko');
     dayjs.tz.setDefault('Asia/Seoul');
-    return <RouterProvider router={router} />;
+    return <div>라이블리</div>;
 }
 
 export default App;
