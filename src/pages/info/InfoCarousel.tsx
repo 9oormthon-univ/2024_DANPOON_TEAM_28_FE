@@ -1,6 +1,7 @@
 import Carousel from 'react-material-ui-carousel';
 import { Box, Typography } from '@mui/material';
-import { InfoCarouselData } from '@/constant/InfoCarouselData';
+import { InfoCarouselData } from '@/constants/infoCarouselData';
+
 import * as style from './InfoCarousel.style';
 import CarouselIndicator from '@/components/CarouselIndicator';
 
