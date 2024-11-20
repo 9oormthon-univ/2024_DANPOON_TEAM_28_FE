@@ -19,7 +19,8 @@ const IconBadge = ({ type, finished, number }: IIconBadgeProps) => {
         <Avatar
             sx={{
                 width: '3.25rem',
-                height: '4.25rem',
+                minHeight: '4.25rem',
+                height: '100%',
                 backgroundColor: backgroundColor,
             }}
             variant={'square'}

@@ -18,6 +18,7 @@ const MissionCard = ({ type, children, finished, sx }: IMissionCardProps) => {
                 borderRadius: '1rem',
                 overflow: 'hidden',
                 minWidth: '30rem',
+                ...sx,
             }}
             direction={'row'}
             alignItems={'center'}
