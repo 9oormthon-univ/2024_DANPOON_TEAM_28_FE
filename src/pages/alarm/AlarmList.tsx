@@ -26,6 +26,7 @@ const AlarmList = ({
                         pl: '1.25rem',
                         backgroundColor: 'white',
                     }}
+                    variant={'heading2Light'}
                 >
                     {timePeriod}
                 </Typography>

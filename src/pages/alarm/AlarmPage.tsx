@@ -134,6 +134,7 @@ const AlarmPage = () => {
                                     ? 'livelyPrimary.2'
                                     : '#999999',
                             }}
+                            variant={'body3SemiBold'}
                         >
                             안 읽음
                         </Typography>

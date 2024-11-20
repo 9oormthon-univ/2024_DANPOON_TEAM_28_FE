@@ -13,13 +13,15 @@ const Alarm = ({ title, subtitle, pushedAt, type, read }: IAlarmProps) => {
             <ListItemText
                 primary={
                     <>
-                        <Typography>{title}</Typography>
-                        {subtitle ?? (
+                        <Typography variant={'body3Medium'}>{title}</Typography>
+                        {subtitle && (
                             <Typography
                                 sx={{
                                     overflow: 'hidden',
                                     textOverflow: 'ellipsis',
+                                    color: 'livelyPrimary.2',
                                 }}
+                                variant={'body3Medium'}
                             >
                                 {subtitle}
                             </Typography>
@@ -27,6 +29,13 @@ const Alarm = ({ title, subtitle, pushedAt, type, read }: IAlarmProps) => {
                     </>
                 }
                 secondary={pushedAt}
+                secondaryTypographyProps={{
+                    variant: 'body3Regular',
+                    color: '#636363',
+                    sx: {
+                        mt: '0.25rem',
+                    },
+                }}
             />
         </ListItem>
     );
