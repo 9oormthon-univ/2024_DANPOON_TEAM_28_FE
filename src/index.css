@@ -4,3 +4,7 @@
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff')
         format('woff');
 }
+
+body {
+    background-color: #f0f7e2;
+}
