@@ -1,18 +1,11 @@
 import { createSvgIcon } from '@mui/material';
 
 const DocsIcon = createSvgIcon(
-    <svg
-        xmlns='http://www.w3.org/2000/svg'
-        width='48'
-        height='48'
-        viewBox='0 0 48 48'
-        fill='none'
-    >
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 22' fill='none'>
         <path
-            d='M27 10H15.8C15.0574 10 14.3452 10.295 13.8201 10.8201C13.295 11.3452 13 12.0574 13 12.8V35.2C13 35.9426 13.295 36.6548 13.8201 37.1799C14.3452 37.705 15.0574 38 15.8 38H32.6C33.3426 38 34.0548 37.705 34.5799 37.1799C35.105 36.6548 35.4 35.9426 35.4 35.2V18.4L27 10Z'
+            d='M11 1H3C2.46957 1 1.96086 1.21071 1.58579 1.58579C1.21071 1.96086 1 2.46957 1 3V19C1 19.5304 1.21071 20.0391 1.58579 20.4142C1.96086 20.7893 2.46957 21 3 21H15C15.5304 21 16.0391 20.7893 16.4142 20.4142C16.7893 20.0391 17 19.5304 17 19V7L11 1Z'
             stroke='currentColor'
-            strokeOpacity='1'
-            strokeWidth='2'
+            strokeWidth='1.5'
             strokeLinecap='round'
             strokeLinejoin='round'
         />
