@@ -17,34 +17,30 @@ const DocsIcon = createSvgIcon(
             strokeLinejoin='round'
         />
         <path
-            d='M27.0001 10V18.4H35.4001'
+            d='M11 1V7H17'
             stroke='currentColor'
-            strokeOpacity='1'
-            strokeWidth='2'
+            strokeWidth='1.5'
             strokeLinecap='round'
             strokeLinejoin='round'
         />
         <path
-            d='M29.8 25.4H18.6'
+            d='M13 12H5'
             stroke='currentColor'
-            strokeOpacity='1'
-            strokeWidth='2'
+            strokeWidth='1.5'
             strokeLinecap='round'
             strokeLinejoin='round'
         />
         <path
-            d='M29.8 31H18.6'
+            d='M13 15.9999H5'
             stroke='currentColor'
-            strokeOpacity='1'
-            strokeWidth='2'
+            strokeWidth='1.5'
             strokeLinecap='round'
             strokeLinejoin='round'
         />
         <path
-            d='M21.4 19.8H20H18.6'
+            d='M7 7.99988H6H5'
             stroke='currentColor'
-            strokeOpacity='1'
-            strokeWidth='2'
+            strokeWidth='1.5'
             strokeLinecap='round'
             strokeLinejoin='round'
         />

@@ -3,7 +3,7 @@ import {
     CheckIcon,
     DocsIcon,
     NotificationIcon,
-    PersonIcon,
+    MyPageIcon,
     SearchIcon,
     StatusIcon,
     TrophyIcon,
@@ -39,9 +39,9 @@ export const Notification: Story = {
     render: (args) => <args.component sx={{ color: 'primary.main' }} />,
 };
 
-export const Person: Story = {
+export const MyPage: Story = {
     args: {
-        component: PersonIcon,
+        component: MyPageIcon,
     },
     render: (args) => <args.component sx={{ color: 'primary.main' }} />,
 };

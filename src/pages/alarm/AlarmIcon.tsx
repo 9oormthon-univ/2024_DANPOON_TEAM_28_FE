@@ -1,6 +1,6 @@
 import {
     DocsIcon,
-    PersonIcon,
+    MyPageIcon,
     StatusIcon,
     TrophyIcon,
 } from '@/components/Icons';
@@ -21,7 +21,7 @@ const AlarmIcon = ({ type, read }: { type: string; read: boolean }) => {
     } else if (type === 'status') {
         icon = <StatusIcon sx={style} />;
     } else if (type === 'test') {
-        icon = <PersonIcon sx={style} />;
+        icon = <MyPageIcon sx={style} />;
     }
 
     return (
