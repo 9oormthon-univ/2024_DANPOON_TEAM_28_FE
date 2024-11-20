@@ -4,12 +4,12 @@ import * as style from './SearchBar.style';
 import SearchIcon from './Icons/SearchIcon';
 import { debounce } from 'lodash';
 
-type SearchBarProps = {
+interface ISearchBarProps {
     page: 'infoBoard' | 'mapPage';
     onSearch?: (searchText: string) => void;
 };
 
-const SearchBar: React.FC<SearchBarProps> = ({ page, onSearch }) => {
+const SearchBar: React.FC<ISearchBarProps> = ({ page, onSearch }) => {
     const [searchText, setSearchText] = useState('');
 
     // 실시간 검색 결과가 필요한 경우 사용
