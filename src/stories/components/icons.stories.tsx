@@ -1,5 +1,13 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { NotificationIcon, SearchIcon, MyPageIcon, MapIcon, TrophyIcon, StatusIcon, DocsIcon } from '@/components/Icons';
+import {
+    CheckIcon,
+    DocsIcon,
+    NotificationIcon,
+    MyPageIcon,
+    SearchIcon,
+    StatusIcon,
+    TrophyIcon,
+} from '@/components/Icons';
 
 const meta: Meta = {
     title: 'components/Icons',
@@ -10,16 +18,23 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Notification: Story = {
+export const Check: Story = {
     args: {
-        component: NotificationIcon,
+        component: CheckIcon,
     },
     render: (args) => <args.component sx={{ color: 'primary.main' }} />,
 };
 
-export const Search: Story = {
+export const Docs: Story = {
     args: {
-        component: SearchIcon,
+        component: DocsIcon,
+    },
+    render: (args) => <args.component sx={{ color: 'primary.main' }} />,
+};
+
+export const Notification: Story = {
+    args: {
+        component: NotificationIcon,
     },
     render: (args) => <args.component sx={{ color: 'primary.main' }} />,
 };
@@ -31,16 +46,9 @@ export const MyPage: Story = {
     render: (args) => <args.component sx={{ color: 'primary.main' }} />,
 };
 
-export const Map: Story = {
+export const Search: Story = {
     args: {
-        component: MapIcon,
-    },
-    render: (args) => <args.component sx={{ color: 'primary.main' }} />,
-};
-
-export const Trophy: Story = {
-    args: {
-        component: TrophyIcon,
+        component: SearchIcon,
     },
     render: (args) => <args.component sx={{ color: 'primary.main' }} />,
 };
@@ -52,9 +60,9 @@ export const Status: Story = {
     render: (args) => <args.component sx={{ color: 'primary.main' }} />,
 };
 
-export const Docs: Story = {
+export const Trophy: Story = {
     args: {
-        component: DocsIcon,
+        component: TrophyIcon,
     },
     render: (args) => <args.component sx={{ color: 'primary.main' }} />,
 };
