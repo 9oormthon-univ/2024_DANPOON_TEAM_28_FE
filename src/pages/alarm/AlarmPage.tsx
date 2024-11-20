@@ -141,21 +141,23 @@ const AlarmPage = () => {
                     </Stack>
                 </Button>
             </Stack>
-            <AlarmList
-                timePeriod='오늘'
-                data={todayData}
-                filterUnread={filterUnread}
-            />
-            <AlarmList
-                timePeriod='지난 주'
-                data={lastWeekData}
-                filterUnread={filterUnread}
-            />
-            <AlarmList
-                timePeriod='이전'
-                data={olderData}
-                filterUnread={filterUnread}
-            />
+            <Stack spacing={6}>
+                <AlarmList
+                    timePeriod='오늘'
+                    data={todayData}
+                    filterUnread={filterUnread}
+                />
+                <AlarmList
+                    timePeriod='지난 주'
+                    data={lastWeekData}
+                    filterUnread={filterUnread}
+                />
+                <AlarmList
+                    timePeriod='이전'
+                    data={olderData}
+                    filterUnread={filterUnread}
+                />
+            </Stack>
         </Layout>
     );
 };

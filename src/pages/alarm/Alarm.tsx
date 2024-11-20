@@ -7,6 +7,7 @@ const Alarm = ({ title, subtitle, pushedAt, type, read }: IAlarmProps) => {
         <ListItem
             sx={{
                 backgroundColor: '#fff',
+                p: '1rem',
             }}
         >
             <AlarmIcon type={type} read={read} />
