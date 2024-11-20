@@ -2,7 +2,7 @@ import SwipeableAction from '@/components/SwipeableAction';
 import { IAlarmProps } from '@/types/IAlarmProps';
 import Alarm from './Alarm';
 import { Divider, List, Typography } from '@mui/material';
-import dayjs from 'dayjs';
+import dayjs from '@/utils/dayjs';
 
 const AlarmList = ({
     timePeriod,

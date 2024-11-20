@@ -1,5 +1,5 @@
 import { IAlarmProps } from '@/types/IAlarmProps';
-import dayjs from 'dayjs';
+import dayjs from '@/utils/dayjs';
 import { useState } from 'react';
 import AlarmList from './AlarmList';
 import { Stack } from '@mui/material';
