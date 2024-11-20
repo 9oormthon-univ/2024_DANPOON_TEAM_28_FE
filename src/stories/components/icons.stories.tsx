@@ -2,11 +2,14 @@ import { Meta, StoryObj } from '@storybook/react';
 import {
     CheckIcon,
     DocsIcon,
+    MapIcon,
     NotificationIcon,
     MyPageIcon,
     SearchIcon,
     StatusIcon,
     TrophyIcon,
+    StarOutlinedIcon,
+    StarIcon,
 } from '@/components/Icons';
 
 const meta: Meta = {
@@ -28,6 +31,14 @@ export const Check: Story = {
 export const Docs: Story = {
     args: {
         component: DocsIcon,
+    },
+    render: (args) => <args.component sx={{ color: 'primary.main' }} />,
+};
+
+export const Map: Story = {
+    // 추가된 MapIcon 스토리
+    args: {
+        component: MapIcon,
     },
     render: (args) => <args.component sx={{ color: 'primary.main' }} />,
 };
@@ -63,6 +74,20 @@ export const Status: Story = {
 export const Trophy: Story = {
     args: {
         component: TrophyIcon,
+    },
+    render: (args) => <args.component sx={{ color: 'primary.main' }} />,
+};
+
+export const StarOutlined: Story = {
+    args: {
+        component: StarOutlinedIcon,
+    },
+    render: (args) => <args.component sx={{ color: 'primary.main' }} />,
+};
+
+export const Star: Story = {
+    args: {
+        component: StarIcon,
     },
     render: (args) => <args.component sx={{ color: 'primary.main' }} />,
 };
