@@ -7,6 +7,7 @@ import {
     MyPage,
     NotFound,
 } from './pages';
+import AlarmPage from './pages/alarm/AlarmPage';
 
 const router = createBrowserRouter([
     {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
     {
         path: '/my-page',
         element: <MyPage />,
+    },
+    {
+        path: '/alarm',
+        element: <AlarmPage />,
     },
     {
         path: '*',
