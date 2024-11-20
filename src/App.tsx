@@ -4,8 +4,8 @@ import utc from 'dayjs/plugin/utc';
 import dayjs from 'dayjs';
 import { locale } from 'dayjs';
 import 'dayjs/locale/ko';
-import { RouterProvider } from 'react-router-dom';
-import router from './Router';
+// import { RouterProvider } from 'react-router-dom';
+// import router from './Router';
 
 function App() {
     dayjs.extend(utc);
