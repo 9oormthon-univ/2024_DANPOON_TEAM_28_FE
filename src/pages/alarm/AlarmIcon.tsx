@@ -11,8 +11,6 @@ const AlarmIcon = ({ type, read }: { type: string; read: boolean }) => {
 
     const style: SxProps = {
         color: read ? '#999' : '#F0F7E2', // 라이블리 4
-        width: '3rem',
-        height: '3rem',
     };
     if (type === 'challenge') {
         icon = <TrophyIcon sx={style} />;
