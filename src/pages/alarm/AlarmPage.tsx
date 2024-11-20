@@ -2,8 +2,7 @@ import { IAlarmProps } from '@/types/IAlarmProps';
 import dayjs from 'dayjs';
 import { useState } from 'react';
 import AlarmList from './AlarmList';
-import { Box, Button, Stack, Typography } from '@mui/material';
-import { CheckIcon } from '@/components/Icons';
+import { Stack } from '@mui/material';
 import Layout from '@/layouts/Layout';
 import AlarmHeader from './AlarmHeader';
 

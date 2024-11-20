@@ -9,6 +9,7 @@ import { ThemeProvider } from '@mui/material';
 import theme from '../src/constants/theme';
 
 import '../src/index.css';
+import { MemoryRouter } from 'react-router-dom';
 
 dayjs.extend(utc);
 dayjs.extend(tz);
@@ -27,9 +28,11 @@ const preview: Preview = {
     decorators: [
         (Story) => {
             return (
-                <ThemeProvider theme={theme}>
-                    <Story />
-                </ThemeProvider>
+                <MemoryRouter initialEntries={['/']}>
+                    <ThemeProvider theme={theme}>
+                        <Story />
+                    </ThemeProvider>
+                </MemoryRouter>
             );
         },
     ],

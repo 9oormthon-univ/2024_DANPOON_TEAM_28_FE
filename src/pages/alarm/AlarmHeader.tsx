@@ -1,5 +1,6 @@
 import { CheckIcon, ChevronLeftIcon } from '@/components/Icons';
 import { Button, IconButton, Stack, Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const AlarmHeader = ({
     filterUnread,
@@ -8,6 +9,7 @@ const AlarmHeader = ({
     filterUnread: boolean;
     handleFilterUnread: () => void;
 }) => {
+    const navigate = useNavigate();
     return (
         <>
             <Stack
@@ -22,6 +24,7 @@ const AlarmHeader = ({
                         p: 0,
                         width: '1.25rem',
                     }}
+                    onClick={() => navigate(-1)}
                 >
                     <ChevronLeftIcon
                         sx={{

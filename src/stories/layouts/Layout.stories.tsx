@@ -1,6 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
 import Layout, { ILayoutProps } from '@/layouts/Layout'; // 실제 Layout 경로에 맞게 수정
-import { MemoryRouter } from 'react-router-dom';
 import { Box } from '@mui/material';
 
 const meta: Meta<ILayoutProps> = {
@@ -25,13 +24,7 @@ const meta: Meta<ILayoutProps> = {
             description: '하단 네비게이션 제거 여부',
         },
     },
-    decorators: [
-        (Story) => (
-            <MemoryRouter initialEntries={['/']}>
-                <Story />
-            </MemoryRouter>
-        ),
-    ],
+    decorators: [(Story) => <Story />],
 };
 
 export default meta;
