@@ -19,9 +19,10 @@ const Layout = ({
             sx={{
                 overflowX: 'hidden',
                 backgroundColor: 'background.default',
-                p: removePadding ? 0 : 2,
+                px: removePadding ? 0 : 2,
                 ...sx,
             }}
+            disableGutters
         >
             {children}
             {!removeBottomNavigation && <BottomNav />}
