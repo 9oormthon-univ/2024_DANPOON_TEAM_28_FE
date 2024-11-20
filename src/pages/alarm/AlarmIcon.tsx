@@ -5,6 +5,7 @@ import {
     TrophyIcon,
 } from '@/components/Icons';
 import { Avatar, ListItemAvatar, SxProps } from '@mui/material';
+import * as styles from './Alarm.styles';
 
 const AlarmIcon = ({ type, read }: { type: string; read: boolean }) => {
     let icon: null | React.ReactNode = null;
@@ -23,18 +24,12 @@ const AlarmIcon = ({ type, read }: { type: string; read: boolean }) => {
     }
 
     return (
-        <ListItemAvatar
-            sx={{
-                width: '4rem',
-                height: '3rem',
-            }}
-        >
+        <ListItemAvatar sx={styles.alarmBackgroundStyle}>
             <Avatar
                 variant='circular'
                 sx={{
                     backgroundColor: read ? '#eee' : 'livelyPrimary.2', // 라이블리 2
-                    width: '3rem',
-                    height: '3rem',
+                    ...styles.alarmIconStyle,
                 }}
             >
                 {icon}

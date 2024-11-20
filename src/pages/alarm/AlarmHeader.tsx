@@ -1,6 +1,7 @@
 import { CheckIcon, ChevronLeftIcon } from '@/components/Icons';
 import { Button, IconButton, Stack, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import * as styles from './Alarm.styles';
 
 const AlarmHeader = ({
     filterUnread,
@@ -13,7 +14,7 @@ const AlarmHeader = ({
     return (
         <>
             <Stack
-                sx={{ px: '1rem', height: 'fit-content', pt: '1rem' }}
+                sx={styles.alarmHeaderStyle}
                 direction='row'
                 justifyContent={'flex-start'}
                 alignItems={'center'}
@@ -57,12 +58,7 @@ const AlarmHeader = ({
                             color: filterUnread ? 'livelyPrimary.2' : '#999999',
                         }}
                     >
-                        <CheckIcon
-                            sx={{
-                                width: '0.75rem',
-                                height: '0.5rem',
-                            }}
-                        />
+                        <CheckIcon sx={styles.checkIconStyle} />
                         <Typography
                             sx={{
                                 color: filterUnread

@@ -3,6 +3,7 @@ import { IAlarmProps } from '@/types/IAlarmProps';
 import Alarm from './Alarm';
 import { Divider, List, Typography } from '@mui/material';
 import dayjs from '@/utils/dayjs';
+import * as styles from './Alarm.styles';
 
 const AlarmList = ({
     timePeriod,
@@ -22,10 +23,7 @@ const AlarmList = ({
             }}
             subheader={
                 <Typography
-                    sx={{
-                        pl: '1.25rem',
-                        backgroundColor: 'white',
-                    }}
+                    sx={styles.alarmListSubHeaderStyle}
                     variant={'heading2Light'}
                 >
                     {timePeriod}
@@ -66,12 +64,7 @@ const AlarmList = ({
                                 pushedAt={pushedAt}
                             />
                         </SwipeableAction>
-                        <Divider
-                            sx={{
-                                borderColor: '#F0F7E2',
-                                backgroundColor: 'white',
-                            }}
-                        />
+                        <Divider sx={styles.alarmDividerStyle} />
                     </>
                 );
             })}
