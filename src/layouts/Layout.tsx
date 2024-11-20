@@ -1,14 +1,17 @@
+import BottomNav from '@/components/BottomNav';
 import { Container, SxProps } from '@mui/material';
 import React from 'react';
 
 const Layout = ({
     children,
-    padding,
     sx,
+    removePadding = false,
+    removeBottomNavigation = false,
 }: {
     children: React.ReactNode;
-    padding?: number;
     sx?: SxProps;
+    removePadding?: boolean;
+    removeBottomNavigation?: boolean;
 }) => {
     return (
         <Container
@@ -16,11 +19,12 @@ const Layout = ({
             sx={{
                 overflowX: 'hidden',
                 backgroundColor: 'background.default',
-                p: padding || 0,
+                p: removePadding ? 0 : 2,
                 ...sx,
             }}
         >
             {children}
+            {!removeBottomNavigation && <BottomNav />}
         </Container>
     );
 };

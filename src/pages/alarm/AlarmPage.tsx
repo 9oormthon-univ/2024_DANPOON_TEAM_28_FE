@@ -95,6 +95,8 @@ const AlarmPage = () => {
             sx={{
                 minHeight: '100dvh',
             }}
+            removePadding
+            removeBottomNavigation
         >
             <Box
                 sx={{

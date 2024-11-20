@@ -1,11 +1,6 @@
 import { useLocation, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import {
-    Box,
-    Paper,
-    BottomNavigation,
-    BottomNavigationAction,
-} from '@mui/material';
+import { Paper, BottomNavigation, BottomNavigationAction } from '@mui/material';
 import {
     TrophyIcon,
     StatusIcon,
