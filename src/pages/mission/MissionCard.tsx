@@ -1,4 +1,4 @@
-import { Box, Stack, SxProps } from '@mui/material';
+import { Stack, SxProps } from '@mui/material';
 import IconBadge from './IconBadge';
 
 export interface IMissionCardProps {
@@ -9,6 +9,8 @@ export interface IMissionCardProps {
 }
 
 const MissionCard = ({ type, children, finished, sx }: IMissionCardProps) => {
+    const borderColor =
+        type === 'clover' && finished ? 'livelyPrimary.2' : '#eee';
     return (
         <Stack
             sx={{
@@ -16,7 +18,6 @@ const MissionCard = ({ type, children, finished, sx }: IMissionCardProps) => {
                 borderRadius: '1rem',
                 overflow: 'hidden',
                 minWidth: '30rem',
-                ...sx,
             }}
             direction={'row'}
             alignItems={'center'}
@@ -24,7 +25,8 @@ const MissionCard = ({ type, children, finished, sx }: IMissionCardProps) => {
             <IconBadge type={type} finished={finished} />
             <Stack
                 sx={{
-                    border: '2px solid #EEE',
+                    border: '2px solid',
+                    borderColor: borderColor,
                     borderLeft: 'none',
                     height: '100%',
                     width: '100%',

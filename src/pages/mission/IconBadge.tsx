@@ -2,16 +2,19 @@ import { Avatar, Typography } from '@mui/material';
 import Clover from '@/assets/clover.png';
 
 export interface IIconBadgeProps {
-    type: 'clover' | 'my';
+    type: 'clover' | 'my' | 'number';
     finished: boolean;
+    number?: number;
 }
 
-const IconBadge = ({ type, finished }: IIconBadgeProps) => {
-    const backgroundColor = finished
-        ? '#bbb'
-        : type === 'clover'
-          ? 'livelyPrimary.2'
-          : 'livelyPrimary.3';
+const IconBadge = ({ type, finished, number }: IIconBadgeProps) => {
+    const backgroundColor =
+        type === 'clover'
+            ? 'livelyPrimary.2'
+            : finished
+              ? '#bbb'
+              : 'livelyPrimary.3';
+
     return (
         <Avatar
             sx={{
@@ -20,7 +23,7 @@ const IconBadge = ({ type, finished }: IIconBadgeProps) => {
                 backgroundColor: backgroundColor,
             }}
             variant={'square'}
-            aria-label={type === 'clover' ? '클로버 미션' : '나의 미션'}
+            aria-label={type === 'my' ? '나의 미션' : '클로버 미션'}
         >
             {type === 'clover' ? (
                 <img
@@ -34,7 +37,7 @@ const IconBadge = ({ type, finished }: IIconBadgeProps) => {
                     variant={'body3SemiBold'}
                     aria-hidden
                 >
-                    MY
+                    {number ? number : 'MY'}
                 </Typography>
             )}
         </Avatar>

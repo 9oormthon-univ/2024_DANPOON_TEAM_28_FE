@@ -5,13 +5,16 @@ export interface IMissionContentProps {
     name: string;
     category: string;
     difficulty: number;
+    finished?: boolean;
 }
 
 const MissionContent = ({
     name,
     category,
     difficulty,
+    finished = false,
 }: IMissionContentProps) => {
+    const color = finished ? '#bbb' : 'livelyPrimary.2';
     return (
         <Stack
             direction={'column'}
@@ -23,7 +26,7 @@ const MissionContent = ({
             <Stack direction={'row'} spacing={1}>
                 <Typography
                     variant={'body3Medium'}
-                    sx={{ color: 'livelyPrimary.2', verticalAlign: 'middle' }}
+                    sx={{ color: color, verticalAlign: 'middle' }}
                 >
                     {`#${category}`}
                 </Typography>
@@ -36,10 +39,10 @@ const MissionContent = ({
                     precision={1}
                     sx={{
                         '& .MuiRating-iconFilled': {
-                            color: 'livelyPrimary.2',
+                            color: color,
                         },
                         '& .MuiRating-iconHover': {
-                            color: 'livelyPrimary.2',
+                            color: color,
                         },
                         fontSize: '1rem',
                     }}
