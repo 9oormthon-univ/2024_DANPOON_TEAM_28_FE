@@ -14,13 +14,6 @@ interface ILivelySecondary {
     C: string;
 }
 
-interface ILivelyTypography {
-    semiBold?: React.CSSProperties;
-    medium?: React.CSSProperties;
-    regular?: React.CSSProperties;
-    light?: React.CSSProperties;
-}
-
 declare module '@mui/material/styles' {
     interface Palette {
         livelyPrimary: ILivelyPrimary;
@@ -32,28 +25,41 @@ declare module '@mui/material/styles' {
     }
 
     interface TypographyVariants {
-        heading1: ILivelyTypography;
-        heading2: ILivelyTypography;
+        heading1Medium: React.CSSProperties;
+        heading2Medium: React.CSSProperties;
+        heading2Light: React.CSSProperties;
         body1: React.CSSProperties;
         body2: React.CSSProperties;
-        body3: ILivelyTypography;
-        body4: ILivelyTypography;
+        body3SemiBold: React.CSSProperties;
+        body3Regular: React.CSSProperties;
+        body4SemiBold: React.CSSProperties;
+        body4Regular: React.CSSProperties;
     }
 
     interface TypographyVariantsOptions {
-        heading1?: ILivelyTypography;
-        heading2?: ILivelyTypography;
+        heading1Medium?: React.CSSProperties;
+        heading2Medium?: React.CSSProperties;
+        heading2Light?: React.CSSProperties;
         body1?: React.CSSProperties;
         body2?: React.CSSProperties;
-        body3?: ILivelyTypography;
-        body4?: ILivelyTypography;
+        body3SemiBold?: React.CSSProperties;
+        body3Regular?: React.CSSProperties;
+        body4SemiBold?: React.CSSProperties;
+        body4Regular?: React.CSSProperties;
     }
 }
 
 declare module '@mui/material/Typography' {
     interface TypographyPropsVariantOverrides {
-        poster: true;
-        h3: false;
+        heading1Medium: true;
+        heading2Medium: true;
+        heading2Light: true;
+        body1: true;
+        body2: true;
+        body3SemiBold: true;
+        body3Regular: true;
+        body4SemiBold: true;
+        body4Regular: true;
     }
 }
 
@@ -79,30 +85,26 @@ const theme = createTheme({
     },
     typography: {
         fontFamily: 'SBAggroB, Pretendard',
-        heading1: {
-            medium: {
-                fontFamily: 'SBAggroB',
-                fontSize: '1.5rem',
-                fontStyle: 'normal',
-                fontWeight: 400,
-                lineHeight: '2rem',
-            },
+        heading1Medium: {
+            fontFamily: 'SBAggroB',
+            fontSize: '1.5rem',
+            fontStyle: 'normal',
+            fontWeight: 400,
+            lineHeight: '2rem',
         },
-        heading2: {
-            medium: {
-                fontFamily: 'SBAggroB',
-                fontSize: '1.25rem',
-                fontStyle: 'normal',
-                fontWeight: 400,
-                lineHeight: '1.75rem',
-            },
-            light: {
-                fontFamily: 'SBAggroB',
-                fontSize: '1.25rem',
-                fontStyle: 'normal',
-                fontWeight: 300,
-                lineHeight: '1.75rem',
-            },
+        heading2Medium: {
+            fontFamily: 'SBAggroB',
+            fontSize: '1.25rem',
+            fontStyle: 'normal',
+            fontWeight: 400,
+            lineHeight: '1.75rem',
+        },
+        heading2Light: {
+            fontFamily: 'SBAggroB',
+            fontSize: '1.25rem',
+            fontStyle: 'normal',
+            fontWeight: 300,
+            lineHeight: '1.75rem',
         },
         body1: {
             fontFamily: 'Pretendard',
@@ -118,36 +120,49 @@ const theme = createTheme({
             fontWeight: 600,
             lineHeight: '1.375rem',
         },
-        body3: {
-            semiBold: {
-                fontFamily: 'Pretendard',
-                fontSize: '0.9375rem',
-                fontStyle: 'normal',
-                fontWeight: 700,
-                lineHeight: '1.25rem',
-            },
-            regular: {
-                fontFamily: 'Pretendard',
-                fontSize: '0.9375rem',
-                fontStyle: 'normal',
-                fontWeight: 400,
-                lineHeight: '1.25rem',
-            },
+        body3SemiBold: {
+            fontFamily: 'Pretendard',
+            fontSize: '0.9375rem',
+            fontStyle: 'normal',
+            fontWeight: 700,
+            lineHeight: '1.25rem',
         },
-        body4: {
-            semiBold: {
-                fontFamily: 'Pretendard',
-                fontSize: '0.75rem',
-                fontStyle: 'normal',
-                fontWeight: 600,
-                lineHeight: '1rem',
-            },
-            regular: {
-                fontFamily: 'Pretendard',
-                fontSize: '0.75rem',
-                fontStyle: 'normal',
-                fontWeight: 400,
-                lineHeight: '1rem',
+        body3Regular: {
+            fontFamily: 'Pretendard',
+            fontSize: '0.9375rem',
+            fontStyle: 'normal',
+            fontWeight: 400,
+            lineHeight: '1.25rem',
+        },
+        body4SemiBold: {
+            fontFamily: 'Pretendard',
+            fontSize: '0.75rem',
+            fontStyle: 'normal',
+            fontWeight: 600,
+            lineHeight: '1rem',
+        },
+        body4Regular: {
+            fontFamily: 'Pretendard',
+            fontSize: '0.75rem',
+            fontStyle: 'normal',
+            fontWeight: 400,
+            lineHeight: '1rem',
+        },
+    },
+    components: {
+        MuiTypography: {
+            defaultProps: {
+                variantMapping: {
+                    heading1Medium: 'h1',
+                    heading2Medium: 'h2',
+                    heading2Light: 'h2',
+                    body1: 'p',
+                    body2: 'p',
+                    body3SemiBold: 'p',
+                    body3Regular: 'p',
+                    body4SemiBold: 'p',
+                    body4Regular: 'p',
+                },
             },
         },
     },
