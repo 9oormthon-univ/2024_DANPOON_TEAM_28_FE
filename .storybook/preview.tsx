@@ -8,6 +8,8 @@ import 'dayjs/locale/ko';
 import { ThemeProvider } from '@mui/material';
 import theme from '../src/constants/theme';
 
+import '../src/index.css';
+
 dayjs.extend(utc);
 dayjs.extend(tz);
 locale('ko');
