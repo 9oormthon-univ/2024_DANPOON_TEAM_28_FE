@@ -43,6 +43,7 @@ declare module '@mui/material/styles' {
         body1?: React.CSSProperties;
         body2?: React.CSSProperties;
         body3SemiBold?: React.CSSProperties;
+        body3Medium?: React.CSSProperties;
         body3Regular?: React.CSSProperties;
         body4SemiBold?: React.CSSProperties;
         body4Regular?: React.CSSProperties;
@@ -57,6 +58,7 @@ declare module '@mui/material/Typography' {
         body1: true;
         body2: true;
         body3SemiBold: true;
+        body3Medium: true;
         body3Regular: true;
         body4SemiBold: true;
         body4Regular: true;
@@ -127,6 +129,13 @@ const theme = createTheme({
             fontWeight: 700,
             lineHeight: '1.25rem',
         },
+        body3Medium: {
+            fontFamily: 'Pretendard',
+            fontSize: '0.9375rem',
+            fontStyle: 'normal',
+            fontWeight: 500,
+            lineHeight: '1.25rem',
+        },
         body3Regular: {
             fontFamily: 'Pretendard',
             fontSize: '0.9375rem',
@@ -159,6 +168,7 @@ const theme = createTheme({
                     body1: 'p',
                     body2: 'p',
                     body3SemiBold: 'p',
+                    body3Medium: 'p',
                     body3Regular: 'p',
                     body4SemiBold: 'p',
                     body4Regular: 'p',
