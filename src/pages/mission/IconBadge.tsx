@@ -20,6 +20,7 @@ const IconBadge = ({ type, finished }: IIconBadgeProps) => {
                 backgroundColor: backgroundColor,
             }}
             variant={'square'}
+            aria-label={type === 'clover' ? '클로버 미션' : '나의 미션'}
         >
             {type === 'clover' ? (
                 <img
@@ -28,7 +29,11 @@ const IconBadge = ({ type, finished }: IIconBadgeProps) => {
                     style={{ width: '1.5rem', height: '1.5rem' }}
                 />
             ) : (
-                <Typography sx={{ color: 'white' }} variant={'body3SemiBold'}>
+                <Typography
+                    sx={{ color: 'white' }}
+                    variant={'body3SemiBold'}
+                    aria-hidden
+                >
                     MY
                 </Typography>
             )}
