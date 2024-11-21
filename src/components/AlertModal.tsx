@@ -4,7 +4,7 @@ import * as styles from './AlertModal.style';
 
 export interface IAlertModalProps {
     open: boolean;
-    closeModal: () => void;
+    onClose: () => void;
     children: React.ReactNode;
     handlePositiveClick: () => void;
     handleNegativeClick: () => void;
@@ -79,13 +79,13 @@ export const ModalContent = ({
 
 const AlertModal = ({
     open,
-    closeModal,
+    onClose,
     children,
     handlePositiveClick,
     handleNegativeClick,
 }: IAlertModalProps) => {
     return (
-        <Modal open={open} onClose={closeModal}>
+        <Modal open={open} onClose={onClose}>
             <ModalContent
                 handlePositiveClick={handlePositiveClick}
                 handleNegativeClick={handleNegativeClick}
