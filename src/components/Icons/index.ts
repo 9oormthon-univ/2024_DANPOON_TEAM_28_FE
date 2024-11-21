@@ -10,3 +10,5 @@ export { default as StarOutlinedIcon } from './StarOutlinedIcon';
 export { default as StatusIcon } from './StatusIcon';
 export { default as TrophyIcon } from './TrophyIcon';
 export { default as ReloadIcon } from './ReloadIcon';
+export { default as ChevronUpIcon } from './ChevronUpIcon';
+export { default as ChevronDownIcon } from './ChevronDownIcon';

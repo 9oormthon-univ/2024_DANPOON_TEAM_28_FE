@@ -12,6 +12,8 @@ import {
     TrophyIcon,
     ReloadIcon,
     ChevronLeftIcon,
+    ChevronUpIcon,
+    ChevronDownIcon
 } from '@/components/Icons';
 
 const meta: Meta = {
@@ -104,6 +106,20 @@ export const Trophy: Story = {
 export const Reload: Story = {
     args: {
         component: ReloadIcon,
+    },
+    render: (args) => <args.component sx={{ color: 'primary.main' }} />,
+};
+
+export const ChevronUp: Story = {
+    args: {
+        component: ChevronUpIcon,
+    },
+    render: (args) => <args.component sx={{ color: 'primary.main' }} />,
+};
+
+export const ChevronDown: Story = {
+    args: {
+        component: ChevronDownIcon,
     },
     render: (args) => <args.component sx={{ color: 'primary.main' }} />,
 };
