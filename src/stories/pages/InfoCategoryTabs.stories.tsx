@@ -1,11 +1,16 @@
-// InfoCategoryTabs.stories.tsx
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import InfoCategoryTabs from '@/pages/info/InfoCategoryTabs';
 
 const meta: Meta= {
   title: 'Info/InfoCategoryTabs',
   component: InfoCategoryTabs,
+  tags: ['autodocs'],
+  parameters: {
+    layout: 'fullscreen',
+    background: {
+      default: 'light'
+    },
+},
 };
 
 export default meta;
