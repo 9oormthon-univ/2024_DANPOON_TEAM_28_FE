@@ -70,14 +70,15 @@ const theme = createTheme({
         primary: {
             main: '#57873E',
         },
+
+        secondary: {
+            main: '#D27B90',
+        },
         livelyPrimary: {
             '1': '#375139',
             '2': '#57873E',
             '3': '#A4C67C',
             '4': '#F0F7E2',
-        },
-        secondary: {
-            main: '#D27B90',
         },
         livelySecondary: {
             A: '#D27B90',
@@ -105,7 +106,7 @@ const theme = createTheme({
             fontFamily: 'SBAggroB',
             fontSize: '1.25rem',
             fontStyle: 'normal',
-            fontWeight: 300,
+            fontWeight: 400,
             lineHeight: '1.75rem',
         },
         body1: {

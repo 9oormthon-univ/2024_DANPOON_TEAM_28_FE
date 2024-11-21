@@ -13,9 +13,7 @@ const meta: Meta = {
     decorators: [
         (Story) => (
             <Container maxWidth={'sm'}>
-                <MemoryRouter initialEntries={['/']}>
-                    <Story />
-                </MemoryRouter>
+                <Story />
             </Container>
         ),
     ],

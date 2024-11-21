@@ -11,6 +11,7 @@ import {
     StarIcon,
     TrophyIcon,
     ReloadIcon,
+    ChevronLeftIcon,
 } from '@/components/Icons';
 
 const meta: Meta = {
@@ -25,6 +26,13 @@ type Story = StoryObj<typeof meta>;
 export const Check: Story = {
     args: {
         component: CheckIcon,
+    },
+    render: (args) => <args.component sx={{ color: 'primary.main' }} />,
+};
+
+export const ChevronLeft: Story = {
+    args: {
+        component: ChevronLeftIcon,
     },
     render: (args) => <args.component sx={{ color: 'primary.main' }} />,
 };

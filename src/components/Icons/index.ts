@@ -1,4 +1,5 @@
 export { default as CheckIcon } from './CheckIcon';
+export { default as ChevronLeftIcon } from './ChevronLeftIcon';
 export { default as DocsIcon } from './DocsIcon';
 export { default as MapIcon } from './MapIcon';
 export { default as MyPageIcon } from './MyPageIcon';
