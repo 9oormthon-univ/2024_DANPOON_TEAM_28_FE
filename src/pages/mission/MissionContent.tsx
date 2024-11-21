@@ -22,7 +22,9 @@ const MissionContent = ({
             alignItems={'flex-start'}
             sx={{ width: '100%' }}
         >
-            <Typography variant={'body3Medium'}>{name}</Typography>
+            <Typography variant={'body3Medium'} color={'#000'}>
+                {name}
+            </Typography>
             <Stack direction={'row'} spacing={1}>
                 <Typography
                     variant={'body3Medium'}

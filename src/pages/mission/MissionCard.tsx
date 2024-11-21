@@ -2,13 +2,20 @@ import { Stack, SxProps } from '@mui/material';
 import IconBadge from './IconBadge';
 
 export interface IMissionCardProps {
-    type: 'clover' | 'my';
-    finished: boolean;
+    type: 'clover' | 'my' | 'number';
     children: React.ReactNode;
+    number?: number;
+    finished?: boolean;
     sx?: SxProps;
 }
 
-const MissionCard = ({ type, children, finished, sx }: IMissionCardProps) => {
+const MissionCard = ({
+    type,
+    children,
+    number,
+    finished = false,
+    sx,
+}: IMissionCardProps) => {
     const borderColor =
         type === 'clover' && finished ? 'livelyPrimary.2' : '#eee';
     return (
@@ -17,13 +24,13 @@ const MissionCard = ({ type, children, finished, sx }: IMissionCardProps) => {
                 height: '4.25rem',
                 borderRadius: '1rem',
                 overflow: 'hidden',
-                minWidth: '30rem',
+                width: '100%',
                 ...sx,
             }}
             direction={'row'}
             alignItems={'center'}
         >
-            <IconBadge type={type} finished={finished} />
+            <IconBadge type={type} finished={finished} number={number} />
             <Stack
                 sx={{
                     border: '2px solid',
@@ -33,7 +40,7 @@ const MissionCard = ({ type, children, finished, sx }: IMissionCardProps) => {
                     width: '100%',
                     boxSizing: 'border-box',
                     borderRadius: '0rem 1rem 1rem 0rem',
-                    pl: '1rem',
+                    px: '1rem',
                 }}
                 direction={'row'}
                 alignItems={'center'}
