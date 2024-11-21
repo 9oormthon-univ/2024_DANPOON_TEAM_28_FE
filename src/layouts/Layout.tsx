@@ -1,26 +1,49 @@
-import { Container, SxProps } from '@mui/material';
+import BottomNav from '@/components/BottomNav';
+import { Container, Stack, SxProps } from '@mui/material';
 import React from 'react';
+
+export interface ILayoutProps {
+    children: React.ReactNode;
+    sx?: SxProps;
+    removePadding?: boolean;
+    removeBottomNavigation?: boolean;
+}
 
 const Layout = ({
     children,
-    padding,
     sx,
+    removePadding = false,
+    removeBottomNavigation = false,
 }: {
     children: React.ReactNode;
-    padding?: number;
     sx?: SxProps;
+    removePadding?: boolean;
+    removeBottomNavigation?: boolean;
 }) => {
     return (
         <Container
-            maxWidth={'md'}
+            maxWidth={'sm'}
             sx={{
                 overflowX: 'hidden',
                 backgroundColor: 'background.default',
-                p: padding || 0,
+                px: removePadding ? 0 : 2,
+                position: 'relative',
                 ...sx,
             }}
+            disableGutters
         >
-            {children}
+            <Stack
+                direction={'column'}
+                alignItems={'center'}
+                sx={{
+                    minHeight: '100vh',
+                    pb: removeBottomNavigation ? 0 : 11,
+                    boxSizing: 'border-box',
+                }}
+            >
+                {children}
+            </Stack>
+            {!removeBottomNavigation && <BottomNav />}
         </Container>
     );
 };

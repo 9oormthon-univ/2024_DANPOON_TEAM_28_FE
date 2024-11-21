@@ -12,8 +12,11 @@ const Header: React.FC = () => {
     return (
         <Box sx={style.container}>
             <Logo size='small' showName={true} />
-            <IconButton onClick={handleNotificationClick}>
-                <NotificationIcon />
+            <IconButton
+                onClick={handleNotificationClick}
+                sx={style.notificationButton}
+            >
+                <NotificationIcon sx={{ fontSize: '1rem' }} />
             </IconButton>
         </Box>
     );

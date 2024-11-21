@@ -1,9 +1,11 @@
 import { SxProps } from '@mui/material';
 
 export const BottomNavStyle: SxProps = {
-    width: '100vw',
+    width: '100%',
+    maxWidth: '37.5rem',
     height: '10%',
     position: 'fixed',
+    margin: '0 auto',
     bottom: 0,
     left: 0,
     right: 0,
