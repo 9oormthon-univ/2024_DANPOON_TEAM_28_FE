@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {Tabs, Tab, Box} from '@mui/material';
+import * as style from './InfoCategoryTabs.style';
 
 interface ITabPanelProps {
   children?: React.ReactNode;
@@ -14,11 +15,11 @@ function TabPanel(props: ITabPanelProps) {
     <div
       role="tabpanel"
       hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
+      id={`tabpanel-${index}`}
+      aria-labelledby={`tab-${index}`}
       {...other}
     >
-      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
+      {value === index && <Box sx={{...style.tabPanelStyle}}>{children}</Box>}
     </div>
   );
 }
@@ -31,9 +32,9 @@ export default function InfoCategoryTabs() {
   };
 
   return (
-    <Box sx={{ width: '100%' }}>
-      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} variant="fullWidth" onChange={handleChange} aria-label="basic tabs example">
+    <Box sx={{...style.containerStyle}}>
+      <Box sx={{ ...style.tabsStyle }}>
+        <Tabs value={value} variant="fullWidth" onChange={handleChange} aria-label="info tabs">
           <Tab label="지원사업"  />
           <Tab label="마음챙김"  />
           <Tab label="위로의 글"  />
