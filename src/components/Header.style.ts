@@ -12,6 +12,6 @@ export const container: SxProps<Theme> = {
 
 export const notificationButton: SxProps<Theme> = {
     color: 'livelyPrimary.2',
-    height: '1rem',
+    height: '100%',
     padding: 0,
 };
