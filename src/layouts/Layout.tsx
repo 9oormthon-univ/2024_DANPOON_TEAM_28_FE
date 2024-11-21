@@ -1,5 +1,5 @@
 import BottomNav from '@/components/BottomNav';
-import { Container, SxProps } from '@mui/material';
+import { Container, Stack, SxProps } from '@mui/material';
 import React from 'react';
 
 export interface ILayoutProps {
@@ -32,7 +32,17 @@ const Layout = ({
             }}
             disableGutters
         >
-            {children}
+            <Stack
+                direction={'column'}
+                alignItems={'center'}
+                sx={{
+                    minHeight: '100vh',
+                    pb: removeBottomNavigation ? 0 : 11,
+                    boxSizing: 'border-box',
+                }}
+            >
+                {children}
+            </Stack>
             {!removeBottomNavigation && <BottomNav />}
         </Container>
     );

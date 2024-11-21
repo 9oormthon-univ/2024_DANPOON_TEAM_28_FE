@@ -41,7 +41,13 @@ const AlarmHeader = ({
                     알림
                 </Typography>
             </Stack>
-            <Stack direction='row' justifyContent={'flex-end'}>
+            <Stack
+                direction='row'
+                justifyContent={'flex-end'}
+                sx={{
+                    width: '100%',
+                }}
+            >
                 <Button
                     onClick={handleFilterUnread}
                     sx={{

@@ -2,11 +2,15 @@ import { Meta, StoryObj } from '@storybook/react';
 import {
     CheckIcon,
     DocsIcon,
+    MapIcon,
     NotificationIcon,
     MyPageIcon,
     SearchIcon,
     StatusIcon,
+    StarOutlinedIcon,
+    StarIcon,
     TrophyIcon,
+    ReloadIcon,
     ChevronLeftIcon,
 } from '@/components/Icons';
 
@@ -40,6 +44,14 @@ export const Docs: Story = {
     render: (args) => <args.component sx={{ color: 'primary.main' }} />,
 };
 
+export const Map: Story = {
+    // 추가된 MapIcon 스토리
+    args: {
+        component: MapIcon,
+    },
+    render: (args) => <args.component sx={{ color: 'primary.main' }} />,
+};
+
 export const Notification: Story = {
     args: {
         component: NotificationIcon,
@@ -68,9 +80,30 @@ export const Status: Story = {
     render: (args) => <args.component sx={{ color: 'primary.main' }} />,
 };
 
+export const StarOutlined: Story = {
+    args: {
+        component: StarOutlinedIcon,
+    },
+    render: (args) => <args.component sx={{ color: 'primary.main' }} />,
+};
+
+export const Star: Story = {
+    args: {
+        component: StarIcon,
+    },
+    render: (args) => <args.component sx={{ color: 'primary.main' }} />,
+};
+
 export const Trophy: Story = {
     args: {
         component: TrophyIcon,
+    },
+    render: (args) => <args.component sx={{ color: 'primary.main' }} />,
+};
+
+export const Reload: Story = {
+    args: {
+        component: ReloadIcon,
     },
     render: (args) => <args.component sx={{ color: 'primary.main' }} />,
 };

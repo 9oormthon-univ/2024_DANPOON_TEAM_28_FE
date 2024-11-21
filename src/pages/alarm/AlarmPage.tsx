@@ -91,18 +91,12 @@ const AlarmPage = () => {
     };
 
     return (
-        <Layout
-            sx={{
-                minHeight: '100dvh',
-            }}
-            removePadding
-            removeBottomNavigation
-        >
+        <Layout removePadding removeBottomNavigation>
             <AlarmHeader
                 filterUnread={filterUnread}
                 handleFilterUnread={handleFilterUnread}
             />
-            <Stack spacing={6}>
+            <Stack spacing={6} width={'100%'}>
                 <AlarmList
                     timePeriod='오늘'
                     data={todayData}
