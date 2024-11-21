@@ -1,15 +1,22 @@
 import { Button, Modal, Stack, Typography } from '@mui/material';
 import Logo from './Logo';
 
+export interface IAlertModalProps {
+    open: boolean;
+    closeModal: () => void;
+    children: React.ReactNode;
+    handlePositiveClick: () => void;
+    handleNegativeClick: () => void;
+}
+
 export const ModalContent = ({
     handlePositiveClick,
     handleNegativeClick,
     children,
-}: {
-    handlePositiveClick: () => void;
-    handleNegativeClick: () => void;
-    children: React.ReactNode;
-}) => {
+}: Pick<
+    IAlertModalProps,
+    'children' | 'handlePositiveClick' | 'handleNegativeClick'
+>) => {
     return (
         <Stack
             sx={{
@@ -40,7 +47,7 @@ export const ModalContent = ({
             <Stack
                 direction={'row'}
                 justifyContent={'center'}
-                spacing={2}
+                spacing={1}
                 sx={{
                     width: '100%',
                 }}
@@ -91,13 +98,7 @@ const AlertModal = ({
     children,
     handlePositiveClick,
     handleNegativeClick,
-}: {
-    open: boolean;
-    closeModal: () => void;
-    children: React.ReactNode;
-    handlePositiveClick: () => void;
-    handleNegativeClick: () => void;
-}) => {
+}: IAlertModalProps) => {
     return (
         <Modal open={open} onClose={closeModal}>
             <ModalContent
