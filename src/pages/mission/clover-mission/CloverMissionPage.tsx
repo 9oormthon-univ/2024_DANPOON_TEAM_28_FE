@@ -5,6 +5,7 @@ import { Button, Stack, Typography } from '@mui/material';
 import MissionCard from '../MissionCard';
 import MissionContent from '../MissionContent';
 import { ReloadIcon } from '@/components/Icons';
+import * as style from './CloverMission.styles';
 
 export interface ICloverMission {
     id: number;
@@ -53,12 +54,7 @@ const CloverMissionPage = () => {
                     variant={'heading1Medium'}
                     color={'livelyPrimary.1'}
                     align={'center'}
-                    sx={{
-                        wordBreak: 'keep-all',
-                        whiteSpace: 'pre-line',
-                        mt: '0.25rem',
-                        mb: '1.5rem',
-                    }}
+                    sx={style.headingStyle}
                 >
                     {'오늘은 어떤 클로버 미션에\n도전할까요?'}
                 </Typography>
@@ -72,16 +68,7 @@ const CloverMissionPage = () => {
             >
                 {data.map((mission, idx) => {
                     return (
-                        <Button
-                            key={mission.id}
-                            sx={{
-                                width: '100%',
-                                height: '4.75rem',
-                                p: 0,
-                                borderRadius: '1rem',
-                                maxWidth: '20rem',
-                            }}
-                        >
+                        <Button key={mission.id} sx={style.missionButtonStyle}>
                             <MissionCard number={idx + 1} type='number'>
                                 <MissionContent
                                     name={mission.name}
@@ -92,15 +79,7 @@ const CloverMissionPage = () => {
                         </Button>
                     );
                 })}
-                <Button
-                    variant={'contained'}
-                    sx={{
-                        width: '6.25rem',
-                        height: '2.5rem',
-                        borderRadius: '1.56rem',
-                        mt: '0.5rem',
-                    }}
-                >
+                <Button variant={'contained'} sx={style.reloadButtonStyle}>
                     <ReloadIcon
                         sx={{
                             fontSize: '1.125rem',
