@@ -15,6 +15,8 @@ export const alarmHeaderStyle: SxProps = {
     px: '1rem',
     height: 'fit-content',
     pt: '1rem',
+    width: '100%',
+    boxSizing: 'border-box',
 };
 
 export const checkIconStyle: SxProps = {

@@ -12,7 +12,7 @@ export const missionButtonStyle: SxProps = {
     height: '4.75rem',
     p: 0,
     borderRadius: '1rem',
-    maxWidth: '20rem',
+    maxWidth: '24rem',
 };
 
 export const reloadButtonStyle: SxProps = {

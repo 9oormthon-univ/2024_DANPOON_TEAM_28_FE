@@ -37,16 +37,13 @@ const data: Array<ICloverMission> = [
 
 const CloverMissionPage = () => {
     return (
-        <Layout
-            sx={{
-                minHeight: '100svh',
-            }}
-        >
+        <Layout>
             <Stack
                 direction={'column'}
                 alignItems={'center'}
                 sx={{
                     mb: '2rem',
+                    width: '100%',
                 }}
             >
                 <Header />
@@ -64,7 +61,10 @@ const CloverMissionPage = () => {
                 direction={'column'}
                 alignItems={'center'}
                 spacing={2.5}
-                sx={{ px: '1rem' }}
+                sx={{
+                    px: '1rem',
+                    width: '100%',
+                }}
             >
                 {data.map((mission, idx) => {
                     return (
