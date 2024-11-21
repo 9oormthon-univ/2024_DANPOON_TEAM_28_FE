@@ -57,18 +57,17 @@ export const titleTextStyle: SxProps = {
     whiteSpace: 'norwrap',
 };
 
-
 export const indicatorStyles = {
     container: {
         marginTop: '10px',
         display: 'flex',
         justifyContent: 'center',
         gap: '5px',
-        height:'10px'
+        height: '10px',
     },
     default: {
-        width: '8px',
-        height: '8px',
+        width: '6px',
+        height: '6px',
         backgroundColor: '#FFF',
     },
     active: {
