@@ -12,3 +12,4 @@ export { default as TrophyIcon } from './TrophyIcon';
 export { default as ReloadIcon } from './ReloadIcon';
 export { default as ChevronUpIcon } from './ChevronUpIcon';
 export { default as ChevronDownIcon } from './ChevronDownIcon';
+export { default as ViewCountIcon } from './ViewCountIcon';

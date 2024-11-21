@@ -13,7 +13,8 @@ import {
     ReloadIcon,
     ChevronLeftIcon,
     ChevronUpIcon,
-    ChevronDownIcon
+    ChevronDownIcon,
+    ViewCountIcon
 } from '@/components/Icons';
 
 const meta: Meta = {
@@ -120,6 +121,13 @@ export const ChevronUp: Story = {
 export const ChevronDown: Story = {
     args: {
         component: ChevronDownIcon,
+    },
+    render: (args) => <args.component sx={{ color: 'primary.main' }} />,
+};
+
+export const ViewCount: Story = {
+    args: {
+        component: ViewCountIcon,
     },
     render: (args) => <args.component sx={{ color: 'primary.main' }} />,
 };
