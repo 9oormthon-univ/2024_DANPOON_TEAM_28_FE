@@ -8,3 +8,4 @@ export { default as StarIcon } from './StarIcon';
 export { default as StarOutlinedIcon } from './StarOutlinedIcon';
 export { default as StatusIcon } from './StatusIcon';
 export { default as TrophyIcon } from './TrophyIcon';
+export { default as ReloadIcon } from './ReloadIcon';

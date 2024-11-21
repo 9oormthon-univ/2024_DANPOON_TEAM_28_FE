@@ -7,9 +7,10 @@ import {
     MyPageIcon,
     SearchIcon,
     StatusIcon,
-    TrophyIcon,
     StarOutlinedIcon,
     StarIcon,
+    TrophyIcon,
+    ReloadIcon,
 } from '@/components/Icons';
 
 const meta: Meta = {
@@ -71,13 +72,6 @@ export const Status: Story = {
     render: (args) => <args.component sx={{ color: 'primary.main' }} />,
 };
 
-export const Trophy: Story = {
-    args: {
-        component: TrophyIcon,
-    },
-    render: (args) => <args.component sx={{ color: 'primary.main' }} />,
-};
-
 export const StarOutlined: Story = {
     args: {
         component: StarOutlinedIcon,
@@ -88,6 +82,20 @@ export const StarOutlined: Story = {
 export const Star: Story = {
     args: {
         component: StarIcon,
+    },
+    render: (args) => <args.component sx={{ color: 'primary.main' }} />,
+};
+
+export const Trophy: Story = {
+    args: {
+        component: TrophyIcon,
+    },
+    render: (args) => <args.component sx={{ color: 'primary.main' }} />,
+};
+
+export const Reload: Story = {
+    args: {
+        component: ReloadIcon,
     },
     render: (args) => <args.component sx={{ color: 'primary.main' }} />,
 };
