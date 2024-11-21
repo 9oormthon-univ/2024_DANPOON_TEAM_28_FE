@@ -4,6 +4,7 @@ import Layout from '@/layouts/Layout';
 import { Button, Stack, Typography } from '@mui/material';
 import MissionCard from '../MissionCard';
 import MissionContent from '../MissionContent';
+import { ReloadIcon } from '@/components/Icons';
 
 export interface ICloverMission {
     id: number;
@@ -35,7 +36,11 @@ const data: Array<ICloverMission> = [
 
 const CloverMissionPage = () => {
     return (
-        <Layout>
+        <Layout
+            sx={{
+                minHeight: '100svh',
+            }}
+        >
             <Stack
                 direction={'column'}
                 alignItems={'center'}
@@ -50,11 +55,12 @@ const CloverMissionPage = () => {
                     align={'center'}
                     sx={{
                         wordBreak: 'keep-all',
+                        whiteSpace: 'pre-line',
                         mt: '0.25rem',
                         mb: '1.5rem',
                     }}
                 >
-                    오늘은 어떤 클로버 미션에 도전할까요?
+                    {'오늘은 어떤 클로버 미션에\n도전할까요?'}
                 </Typography>
                 <Logo size={'large'} showName={false} />
             </Stack>
@@ -70,8 +76,10 @@ const CloverMissionPage = () => {
                             key={mission.id}
                             sx={{
                                 width: '100%',
+                                height: '4.75rem',
                                 p: 0,
                                 borderRadius: '1rem',
+                                maxWidth: '20rem',
                             }}
                         >
                             <MissionCard number={idx + 1} type='number'>
@@ -84,6 +92,21 @@ const CloverMissionPage = () => {
                         </Button>
                     );
                 })}
+                <Button
+                    variant={'contained'}
+                    sx={{
+                        width: '6.25rem',
+                        height: '2.5rem',
+                        borderRadius: '1.56rem',
+                        mt: '0.5rem',
+                    }}
+                >
+                    <ReloadIcon
+                        sx={{
+                            fontSize: '1.125rem',
+                        }}
+                    />
+                </Button>
             </Stack>
         </Layout>
     );

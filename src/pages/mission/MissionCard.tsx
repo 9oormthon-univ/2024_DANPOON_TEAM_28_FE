@@ -21,7 +21,8 @@ const MissionCard = ({
     return (
         <Stack
             sx={{
-                height: '4.25rem',
+                minHeight: '4.25rem',
+                height: '100%',
                 borderRadius: '1rem',
                 overflow: 'hidden',
                 width: '100%',
