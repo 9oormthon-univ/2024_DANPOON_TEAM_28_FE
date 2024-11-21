@@ -6,6 +6,9 @@ const meta: Meta = {
     component: InfoCarousel,
     parameters: {
         layout: 'fullscreen',
+        backgrounds: {
+            default: 'dark',
+        },
     },
     tags: ['autodocs'],
 };
