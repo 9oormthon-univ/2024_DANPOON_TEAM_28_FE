@@ -1,6 +1,8 @@
 import * as React from 'react';
-import {Tabs, Tab, Box} from '@mui/material';
+import {Tabs, Tab, Box, Typography} from '@mui/material';
 import * as style from './InfoCategoryTabs.style';
+
+const tabLabels = ['지원사업', '마음챙김', '위로의 글', '생활습관', '방문지 추천'];
 
 interface ITabPanelProps {
   children?: React.ReactNode;
@@ -34,29 +36,24 @@ export default function InfoCategoryTabs() {
   return (
     <Box sx={{...style.containerStyle}}>
       <Box sx={{ ...style.tabsStyle }}>
-        <Tabs value={value} variant="fullWidth" onChange={handleChange} aria-label="info tabs">
-          <Tab label="지원사업"  />
-          <Tab label="마음챙김"  />
-          <Tab label="위로의 글"  />
-          <Tab label="생활습관"  />
-          <Tab label="방문지 추천"  />
+        <Tabs value={value} variant="fullWidth" onChange={handleChange} aria-label="info tabs" >
+        {tabLabels.map((label, index) => (
+            <Tab
+              key={index}
+              label={
+                <Typography variant={value === index ? 'body3SemiBold' : 'body3Regular'}>
+                  {label}
+                </Typography>
+              }
+            />
+          ))}
         </Tabs>
       </Box>
-      <TabPanel value={value} index={0}>
-        지원사업
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        마음챙김
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        위로의 글
-      </TabPanel>
-      <TabPanel value={value} index={3}>
-        생활습관
-      </TabPanel>
-      <TabPanel value={value} index={4}>
-        방문지 추천
-      </TabPanel>
+      {tabLabels.map((label, index) => (
+        <TabPanel key={index} value={value} index={index}>
+          {label}
+        </TabPanel>
+      ))}
     </Box>
   );
 }
