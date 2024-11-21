@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import AlarmList from '@/pages/alarm/AlarmList';
 import { IAlarmProps } from '@/types/IAlarmProps';
-import dayjs from 'dayjs';
+import dayjs from '@/utils/dayjs';
 
 const meta: Meta = {
     title: 'Alarm/AlarmList',

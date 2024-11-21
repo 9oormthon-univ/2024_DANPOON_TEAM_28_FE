@@ -8,5 +8,5 @@ export const deleteButtonStyle: SxProps = {
     zIndex: 0,
     width: '3.75rem',
     height: '100%',
-    backgroundColor: '#E07590', // TODO: theme 설정 이후 바꾸기
+    backgroundColor: 'livelySecondary.A', // TODO: theme 설정 이후 바꾸기
 };

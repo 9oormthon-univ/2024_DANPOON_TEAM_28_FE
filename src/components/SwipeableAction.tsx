@@ -33,7 +33,9 @@ const SwipeableAction = ({
                     alignItems={'center'}
                     sx={style.deleteButtonStyle}
                 >
-                    <Typography>삭제</Typography>
+                    <Typography variant={'body3Medium'} color={'white'}>
+                        삭제
+                    </Typography>
                 </Stack>
             )}
             <Box

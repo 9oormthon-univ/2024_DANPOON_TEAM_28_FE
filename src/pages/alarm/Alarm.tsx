@@ -1,25 +1,20 @@
 import { IAlarmProps } from '@/types/IAlarmProps';
 import { ListItem, ListItemText, Typography } from '@mui/material';
 import AlarmIcon from './AlarmIcon';
+import * as styles from './Alarm.styles';
 
 const Alarm = ({ title, subtitle, pushedAt, type, read }: IAlarmProps) => {
     return (
-        <ListItem
-            sx={{
-                backgroundColor: '#fff',
-            }}
-        >
+        <ListItem sx={styles.alarmStyle}>
             <AlarmIcon type={type} read={read} />
             <ListItemText
                 primary={
                     <>
-                        <Typography>{title}</Typography>
-                        {subtitle ?? (
+                        <Typography variant={'body3Medium'}>{title}</Typography>
+                        {subtitle && (
                             <Typography
-                                sx={{
-                                    overflow: 'hidden',
-                                    textOverflow: 'ellipsis',
-                                }}
+                                sx={styles.subtitleStyle}
+                                variant={'body3Medium'}
                             >
                                 {subtitle}
                             </Typography>
@@ -27,6 +22,13 @@ const Alarm = ({ title, subtitle, pushedAt, type, read }: IAlarmProps) => {
                     </>
                 }
                 secondary={pushedAt}
+                secondaryTypographyProps={{
+                    variant: 'body3Regular',
+                    color: '#636363',
+                    sx: {
+                        mt: '0.25rem',
+                    },
+                }}
             />
         </ListItem>
     );
