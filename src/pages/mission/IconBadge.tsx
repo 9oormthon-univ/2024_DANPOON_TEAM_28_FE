@@ -1,6 +1,6 @@
 import { Avatar, Typography } from '@mui/material';
 import Clover from '@/assets/clover.png';
-import * as styles from './Mission.styles';
+import * as styles from './Mission.style';
 
 export interface IIconBadgeProps {
     type: 'clover' | 'my' | 'number';
@@ -19,9 +19,7 @@ const IconBadge = ({ type, finished, number }: IIconBadgeProps) => {
     return (
         <Avatar
             sx={{
-                width: '3.25rem',
-                minHeight: '4.25rem',
-                height: '100%',
+                ...styles.iconBadgeStyle,
                 backgroundColor: backgroundColor,
             }}
             variant={'square'}

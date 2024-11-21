@@ -1,7 +1,7 @@
 import { CheckIcon, ChevronLeftIcon } from '@/components/Icons';
 import { Button, IconButton, Stack, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import * as styles from './Alarm.styles';
+import * as styles from './Alarm.style';
 
 const AlarmHeader = ({
     filterUnread,

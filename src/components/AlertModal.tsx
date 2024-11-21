@@ -1,5 +1,6 @@
 import { Button, Modal, Stack, Typography } from '@mui/material';
 import Logo from './Logo';
+import * as styles from './AlertModal.style';
 
 export interface IAlertModalProps {
     open: boolean;
@@ -19,19 +20,7 @@ export const ModalContent = ({
 >) => {
     return (
         <Stack
-            sx={{
-                width: 'calc(100vw - 2rem)',
-                boxSizing: 'border-box',
-                maxWidth: '20.5rem',
-                padding: '1.5rem',
-                pb: '1.375rem',
-                borderRadius: '1.25rem',
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -50%)',
-                backgroundColor: 'background.paper',
-            }}
+            sx={styles.modalContentStyle}
             direction={'column'}
             alignItems={'center'}
             spacing={2}
@@ -55,10 +44,8 @@ export const ModalContent = ({
                 <Button
                     variant={'outlined'}
                     sx={{
-                        borderRadius: '0.625rem',
+                        ...styles.buttonStyle,
                         color: '#999',
-                        width: '100%',
-                        height: '3rem',
                         border: '2px solid #999',
                     }}
                     onClick={() => {
@@ -72,10 +59,8 @@ export const ModalContent = ({
                 <Button
                     variant={'outlined'}
                     sx={{
-                        borderRadius: '0.625rem',
+                        ...styles.buttonStyle,
                         color: 'livelyPrimary.2',
-                        width: '100%',
-                        height: '3rem',
                         border: '2px solid',
                         borderColor: 'livelyPrimary.2',
                     }}
