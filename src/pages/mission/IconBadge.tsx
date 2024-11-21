@@ -1,5 +1,6 @@
 import { Avatar, Typography } from '@mui/material';
 import Clover from '@/assets/clover.png';
+import * as styles from './Mission.styles';
 
 export interface IIconBadgeProps {
     type: 'clover' | 'my' | 'number';
