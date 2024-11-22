@@ -59,6 +59,14 @@ const data: IMissionPage = {
             finished: false,
         },
         {
+            id: 4,
+            type: 'clover',
+            name: '미션 1',
+            category: '건강 챙기기',
+            difficulty: 1,
+            finished: true,
+        },
+        {
             type: 'my',
             id: 5,
             name: '미션 5',
@@ -115,60 +123,81 @@ const MissionPage = () => {
                             p: 0,
                             borderRadius: '1rem',
                         }}
-                        disabled={mission.finished}
+                        disabled={mission.finished && mission.type === 'my'}
                     >
                         <MissionCard
                             type={mission.type}
                             finished={mission.finished}
                         >
-                            <MissionContent name={mission.name}>
-                                {mission.type === 'clover' ? (
-                                    <CloverSubContentCategory
-                                        category={mission.category}
-                                        difficulty={mission.difficulty}
-                                        finished={mission.finished}
-                                    />
-                                ) : (
-                                    (mission.repeatAt || mission.ringAt) && (
-                                        <Stack
-                                            direction={'row'}
-                                            spacing={1.5}
-                                            alignItems={'center'}
-                                        >
-                                            {mission.repeatAt && (
-                                                <SubContent
-                                                    content={mission.repeatAt}
-                                                    type={'repeat'}
-                                                    finished={mission.finished}
-                                                />
-                                            )}
-                                            {mission.ringAt && (
-                                                <SubContent
-                                                    content={mission.ringAt}
-                                                    type={'ring'}
-                                                    finished={mission.finished}
-                                                />
-                                            )}
-                                        </Stack>
-                                    )
-                                )}
-                            </MissionContent>
-                            {mission.finished ? (
+                            {mission.type === 'clover' && mission.finished ? (
                                 <Typography
                                     variant={'body3Medium'}
                                     sx={{
                                         wordBreak: 'keep-all',
+                                        color: '#000',
                                     }}
                                 >
-                                    {'완료'}
+                                    {'새로운 클로버 미션 도전하기!'}
                                 </Typography>
                             ) : (
+                                <MissionContent name={mission.name}>
+                                    {mission.type === 'clover' ? (
+                                        <CloverSubContentCategory
+                                            category={mission.category}
+                                            difficulty={mission.difficulty}
+                                            finished={mission.finished}
+                                        />
+                                    ) : (
+                                        (mission.repeatAt ||
+                                            mission.ringAt) && (
+                                            <Stack
+                                                direction={'row'}
+                                                spacing={1.5}
+                                                alignItems={'center'}
+                                            >
+                                                {mission.repeatAt && (
+                                                    <SubContent
+                                                        content={
+                                                            mission.repeatAt
+                                                        }
+                                                        type={'repeat'}
+                                                        finished={
+                                                            mission.finished
+                                                        }
+                                                    />
+                                                )}
+                                                {mission.ringAt && (
+                                                    <SubContent
+                                                        content={mission.ringAt}
+                                                        type={'ring'}
+                                                        finished={
+                                                            mission.finished
+                                                        }
+                                                    />
+                                                )}
+                                            </Stack>
+                                        )
+                                    )}
+                                </MissionContent>
+                            )}
+                            {!mission.finished ? (
                                 <CheckIcon
                                     sx={{
                                         color: 'livelyPrimary.2',
                                         fontSize: '1rem',
                                     }}
                                 />
+                            ) : (
+                                mission.type === 'my' && (
+                                    <Typography
+                                        variant={'body3Medium'}
+                                        sx={{
+                                            wordBreak: 'keep-all',
+                                        }}
+                                    >
+                                        {'완료'}
+                                    </Typography>
+                                )
                             )}
                         </MissionCard>
                     </Button>
