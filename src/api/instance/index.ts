@@ -25,12 +25,6 @@ export const fetchInstance = initInstance({
   withCredentials: true,
 });
 
-fetchInstance.interceptors.response.use((config) => {
-  const newToken = config.headers.authorization?.replace('Bearer ', '');
-
-  if (newToken) authLocalStorage.set(newToken);
-  return config;
-});
 
 const getAccessToken = () => authLocalStorage.get();
 export const fetchWithToken = initInstance({
@@ -39,24 +33,6 @@ export const fetchWithToken = initInstance({
     Authorization: `Bearer ${getAccessToken()}`,
   },
 });
-
-const reissueAccessToken = async () => {
-  try {
-    const response = await axios.get(`${baseURL}/auth/access-token`, {
-      withCredentials: true,
-    });
-    if (response.status === 200) {
-      const newAccessToken = response.headers.Authorization?.replace('Bearer ', '');
-      if (newAccessToken) {
-        authLocalStorage.set(newAccessToken);
-        return newAccessToken;
-      }
-    }
-    throw new Error('Access token is missing in response');
-  } catch (error) {
-    throw new Error('Failed to reissue access token');
-  }
-};
 
 fetchWithToken.interceptors.request.use((config) => {
   const token = getAccessToken();
@@ -67,28 +43,15 @@ fetchWithToken.interceptors.request.use((config) => {
 });
 
 fetchWithToken.interceptors.response.use(
-  function (response) {
-    return response.data;
-  },
-  async function (error) {
-    const originalRequest = error.config;
-
-    if (error.response && error.response.status === 401) {
-      console.warn('401 Unauthorized: Access token expired or invalid');
-
-      try {
-        const newAccessToken = await reissueAccessToken();
-        originalRequest.headers.Authorization = `Bearer ${newAccessToken}`;
-        return await fetchWithToken(originalRequest);
-      } catch (refreshError) {
-        console.error('토큰 재발급 실패:', refreshError);
-        window.location.href = `${RouterPath.login}`;
-        return Promise.reject(refreshError);
+    (response) => response.data,
+    async (error) => {
+      if (error.response?.status === 401) {
+        console.warn('401 Unauthorized: 액세스 토큰 만료');
+        authLocalStorage.set(undefined);
+        window.location.href = RouterPath.login;
       }
-    }
-
-    return Promise.reject(error);
-  },
+      return Promise.reject(error);
+    },
 );
 
 export const kakaoBaseURL = 'https://dapi.kakao.com';
