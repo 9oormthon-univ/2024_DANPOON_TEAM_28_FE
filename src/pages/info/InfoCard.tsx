@@ -1,5 +1,6 @@
 import { Card, CardMedia, CardContent, Typography, Box } from '@mui/material';
 import { ViewCountIcon } from '@/components/Icons';
+import * as style from './InfoCard.style';
 
 interface ICardProps {
     title: string;
@@ -9,46 +10,35 @@ interface ICardProps {
 }
 
 export default function InfoCard({
-    title='예시 타이틀',
+    title = '예시 타이틀',
     date = new Date('2000-01-01'),
-    view = 0,
+    view = 5123,
     image = 'http://via.placeholder.com/640x480',
 }: ICardProps) {
     return (
-        <Card
-            sx={{
-                maxWidth: 345,
-                borderRadius: 4,
-                boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
-                overflow: 'hidden',
-            }}
-        >
+        <Card sx={style.cardStyle}>
             <CardMedia
                 component="img"
                 image={image}
                 alt={title}
-                sx={{ height: 150 }}
+                sx={style.cardMediaStyle}
             />
 
             <CardContent>
-                <Typography
-                    variant="h6"
-                    sx={{ fontWeight: 'bold', fontSize: '1.2rem', marginBottom: 1 }}
-                >
+                <Typography variant="body3Medium">
                     {title}
                 </Typography>
-
-                <Typography variant="body2" sx={{ color: '#666', marginBottom: 1 }}>
-                    {date.toLocaleDateString()} {/* 날짜 형식화 */}
+                <Box sx={style.dateViewContainerStyle}>
+                <Typography variant="body4Regular">
+                    {date.toLocaleDateString()}
                 </Typography>
 
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                    <ViewCountIcon
-                        style={{ width: 20, height: 20 }}
-                    />
-                    <Typography variant="body2" sx={{ color: '#666' }}>
-                        {view.toLocaleString()} {/* 조회수 숫자 형식화 */}
+                <Box sx={style.viewCountTextStyle}>
+                    <ViewCountIcon style={{ height:'8px', width:'11px'}} />
+                    <Typography variant="body4Regular" sx={style.viewCountTextStyle}>
+                        {view}
                     </Typography>
+                </Box>
                 </Box>
             </CardContent>
         </Card>
