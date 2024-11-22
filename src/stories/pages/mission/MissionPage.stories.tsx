@@ -5,6 +5,9 @@ const meta: Meta = {
     title: 'mission/MissionPage',
     component: MissionPage,
     tags: ['autodocs'],
+    parameters: {
+        layout: 'fullscreen',
+    },
 };
 
 export default meta;

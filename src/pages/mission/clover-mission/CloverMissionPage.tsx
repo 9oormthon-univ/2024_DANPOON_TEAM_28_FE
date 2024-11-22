@@ -51,7 +51,7 @@ const CloverMissionPage = () => {
 
     return (
         <>
-            <Layout removePadding>
+            <Layout>
                 <Stack
                     direction={'column'}
                     alignItems={'center'}

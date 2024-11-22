@@ -38,6 +38,7 @@ const MissionCard = ({
                 }}
                 direction={'row'}
                 alignItems={'center'}
+                justifyContent={'space-between'}
             >
                 {children}
             </Stack>
