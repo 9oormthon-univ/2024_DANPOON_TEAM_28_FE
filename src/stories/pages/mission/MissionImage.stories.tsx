@@ -22,6 +22,12 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
+export const clover0: Story = {
+    args: {
+        clearedCount: 0,
+    },
+};
+
 export const clover1: Story = {
     args: {
         clearedCount: 1,
