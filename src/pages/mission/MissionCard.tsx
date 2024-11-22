@@ -1,6 +1,6 @@
 import { Stack, SxProps, Theme } from '@mui/material';
 import IconBadge from './missionCard/IconBadge';
-import * as styles from './missionCard/Mission.style';
+import * as styles from './missionCard/MissionCard.style';
 
 export interface IMissionCardProps {
     type: 'clover' | 'my' | 'number';

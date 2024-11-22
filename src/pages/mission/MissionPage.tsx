@@ -7,6 +7,7 @@ import MissionContent from './missionCard/MissionContent';
 import CloverSubContentCategory from './missionCard/CloverSubContent';
 import SubContent from './missionCard/SubContent';
 import { CheckIcon } from '@/components/Icons';
+import * as style from './mission.style';
 
 interface ICloverMission {
     type: 'clover';
@@ -90,16 +91,7 @@ const MissionPage = () => {
             <MissionImage clearedCount={data.cloverClearCount} />
             <Typography
                 variant={'heading1Medium'}
-                sx={{
-                    pt: '1.75rem',
-                    pb: '2rem',
-                    px: '1.25rem',
-                    color: 'livelyPrimary.1',
-                    '& span': { color: 'livelyPrimary.2' },
-                    width: '100%',
-                    boxSizing: 'border-box',
-                    wordBreak: 'keep-all',
-                }}
+                sx={style.missionCatchPhraseStyle}
             >
                 {`준상 님! 오늘도 세상을 향해`}
                 <br />
@@ -117,12 +109,7 @@ const MissionPage = () => {
                     <Button
                         key={mission.id}
                         onClick={() => console.log(mission)}
-                        sx={{
-                            width: '100%',
-                            height: '4.75rem',
-                            p: 0,
-                            borderRadius: '1rem',
-                        }}
+                        sx={style.missionCardContainerStyle}
                         disabled={mission.finished && mission.type === 'my'}
                     >
                         <MissionCard
@@ -181,12 +168,7 @@ const MissionPage = () => {
                                 </MissionContent>
                             )}
                             {!mission.finished ? (
-                                <CheckIcon
-                                    sx={{
-                                        color: 'livelyPrimary.2',
-                                        fontSize: '1rem',
-                                    }}
-                                />
+                                <CheckIcon sx={style.checkIconStyle} />
                             ) : (
                                 mission.type === 'my' && (
                                     <Typography
@@ -203,22 +185,10 @@ const MissionPage = () => {
                     </Button>
                 ))}
             </Stack>
-            <Button
-                variant={'outlined'}
-                sx={{
-                    width: '20.375rem',
-                    height: '2.75rem',
-                    my: '2.5rem',
-                    borderRadius: '1.5rem',
-                    border: '1px solid #999',
-                    color: '#000',
-                }}
-            >
-                {
-                    <Typography variant={'body3Medium'}>
-                        {'마이 미션 추가'}
-                    </Typography>
-                }
+            <Button variant={'outlined'} sx={style.addMissionButtonStyle}>
+                <Typography variant={'body3Medium'}>
+                    {'마이 미션 추가'}
+                </Typography>
             </Button>
         </Layout>
     );
