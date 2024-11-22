@@ -3,7 +3,7 @@ import Logo from '@/components/Logo';
 import Layout from '@/layouts/Layout';
 import { Button, Stack, Typography } from '@mui/material';
 import MissionCard from '../MissionCard';
-import MissionContent from '../MissionContent';
+import MissionContent from '../missonCard/MissionContent';
 import { ReloadIcon } from '@/components/Icons';
 import * as style from './CloverMission.styles';
 import { useModal } from '@/hooks/useModal';

@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import MissionContent, {
     IMissionContentProps,
-} from '@/pages/mission/MissionContent';
+} from '@/pages/mission/missonCard/MissionContent';
 
 const meta: Meta<IMissionContentProps> = {
     title: 'mission/MissionContent',
