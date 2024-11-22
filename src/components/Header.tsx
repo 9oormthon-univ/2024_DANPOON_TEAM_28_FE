@@ -16,7 +16,7 @@ const Header: React.FC = () => {
                 onClick={handleNotificationClick}
                 sx={style.notificationButton}
             >
-                <NotificationIcon sx={{ fontSize: '1rem' }} />
+                <NotificationIcon sx={{ fontSize: '1.3rem' }} />
             </IconButton>
         </Box>
     );

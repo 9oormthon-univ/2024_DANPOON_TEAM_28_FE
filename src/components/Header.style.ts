@@ -8,6 +8,7 @@ export const container: SxProps<Theme> = {
     width: '100%',
     boxSizing: 'border-box',
     height: '4.25rem',
+    marginTop: '5vw',
 };
 
 export const notificationButton: SxProps<Theme> = {
