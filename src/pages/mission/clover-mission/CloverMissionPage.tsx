@@ -3,12 +3,13 @@ import Logo from '@/components/Logo';
 import Layout from '@/layouts/Layout';
 import { Button, Stack, Typography } from '@mui/material';
 import MissionCard from '../MissionCard';
-import MissionContent from '../missonCard/MissionContent';
+import MissionContent from '../missionCard/MissionContent';
 import { ReloadIcon } from '@/components/Icons';
 import * as style from './CloverMission.styles';
 import { useModal } from '@/hooks/useModal';
 import AlertModal from '@/components/AlertModal';
 import { useState } from 'react';
+import CloverSubContentCategory from '../missionCard/CloverSubContent';
 
 export interface ICloverMission {
     id: number;
@@ -89,11 +90,12 @@ const CloverMissionPage = () => {
                                 }}
                             >
                                 <MissionCard number={idx + 1} type='number'>
-                                    <MissionContent
-                                        name={mission.name}
-                                        category={mission.category}
-                                        difficulty={mission.difficulty}
-                                    />
+                                    <MissionContent name={mission.name}>
+                                        <CloverSubContentCategory
+                                            category={mission.category}
+                                            difficulty={mission.difficulty}
+                                        />
+                                    </MissionContent>
                                 </MissionCard>
                             </Button>
                         );
