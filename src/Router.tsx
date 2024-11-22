@@ -8,34 +8,50 @@ import {
     NotFound,
 } from './pages';
 import AlarmPage from './pages/alarm/AlarmPage';
+import LoginPage from './pages/login/LoginPage';
+
+export const RouterPath = {
+    mission: '/',
+    status: '/status',
+    map: '/map',
+    info: '/info',
+    myPage: '/my-page',
+    alarm: '/alarm',
+    login: '/login',
+    notFound: '*',
+};
 
 const router = createBrowserRouter([
     {
-        path: '/',
+        path: RouterPath.mission,
         element: <MissionPage />,
     },
     {
-        path: '/status',
+        path: RouterPath.status,
         element: <StatusPage />,
     },
     {
-        path: '/map',
+        path: RouterPath.map,
         element: <MapPage />,
     },
     {
-        path: '/info',
+        path: RouterPath.info,
         element: <InfoPage />,
     },
     {
-        path: '/my-page',
+        path: RouterPath.myPage,
         element: <MyPage />,
     },
     {
-        path: '/alarm',
+        path: RouterPath.alarm,
         element: <AlarmPage />,
     },
     {
-        path: '*',
+        path: RouterPath.login,
+        element: <LoginPage />,
+    },
+    {
+        path: RouterPath.notFound,
         element: <NotFound />,
     },
 ]);
