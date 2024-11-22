@@ -5,7 +5,7 @@ export const infoBoardStyle: SxProps<Theme> = {
     display: 'flex',
     width: '100%',
     height: '12vw',
-    maxHeight: '5%',
+    maxHeight: '40px',
     padding: '9px 12px 9px 16px',
     flexDirection: 'row',
     justifyContent: 'space-between',

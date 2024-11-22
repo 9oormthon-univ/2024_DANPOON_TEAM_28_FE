@@ -73,7 +73,7 @@ const SearchBar: React.FC<ISearchBarProps> = ({ page, onSearch }) => {
                     if (onSearch) onSearch(searchText);
                 }}
             >
-                <SearchIcon sx={{ fontSize: '1.5rem', paddingRight: '7px' }} />
+                <SearchIcon sx={{ fontSize: '1.3rem', paddingRight: '7px' }} />
             </IconButton>
         </Box>
     );
