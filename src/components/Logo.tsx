@@ -7,9 +7,10 @@ import logo_lively_lg from '@/assets/logo_lively_lg.svg';
 interface ILogoProps {
     size?: 'small' | 'medium' | 'large';
     showName?: boolean;
-};
+    style?: React.CSSProperties;
+}
 
-const Logo = ({ size = 'small', showName = true }: ILogoProps) => {
+const Logo = ({ size = 'small', showName = true, style }: ILogoProps) => {
     const getLogoSrc = () => {
         if (showName) {
             return size === 'small' ? logo_lively_sm : logo_lively_lg;
@@ -26,7 +27,7 @@ const Logo = ({ size = 'small', showName = true }: ILogoProps) => {
         }
     };
 
-    return <img src={getLogoSrc()} alt='Logo' />;
+    return <img src={getLogoSrc()} alt='Logo' style={style} />;
 };
 
 export default Logo;
