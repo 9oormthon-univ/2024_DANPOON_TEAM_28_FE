@@ -7,6 +7,7 @@ interface ICardProps {
     date: Date;
     view: number;
     image: string;
+    category?: string;
 }
 
 export default function InfoCard({
@@ -24,7 +25,7 @@ export default function InfoCard({
                 sx={style.cardMediaStyle}
             />
 
-            <CardContent>
+            <CardContent sx={style.cardContentStyle}>
                 <Typography variant="body3Medium">
                     {title}
                 </Typography>

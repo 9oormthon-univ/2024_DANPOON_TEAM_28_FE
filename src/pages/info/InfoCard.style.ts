@@ -5,17 +5,21 @@ export const cardStyle: SxProps<Theme> = {
     overflow: 'hidden',
     display: 'flex',
     flexDirection: 'column',
-    borderRadius:'16px'
+    borderRadius: '16px',
+    boxShadow: 'none',
 };
 
 export const cardMediaStyle: SxProps<Theme> = {
     aspectRatio: '156 / 117',
     borderRadius: '16px',
     width: '100%',
-    height:'auto',
+    height: 'auto',
     objectFit: 'cover',
 };
 
+export const cardContentStyle = {
+    paddingX: '3px',
+};
 
 export const dateViewContainerStyle: SxProps<Theme> = {
     display: 'flex',
@@ -23,7 +27,6 @@ export const dateViewContainerStyle: SxProps<Theme> = {
     alignItems: 'center',
     marginTop: 1,
 };
-
 
 export const viewCountTextStyle: SxProps<Theme> = {
     color: 'livelyPrimary.2',
