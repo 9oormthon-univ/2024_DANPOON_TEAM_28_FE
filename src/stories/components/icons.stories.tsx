@@ -13,6 +13,8 @@ import {
     ReloadIcon,
     ChevronLeftIcon,
 } from '@/components/Icons';
+import RepeatIcon from '@/components/Icons/RepeatIcon';
+import ClockIcon from '@/components/Icons/ClockIcon';
 
 const meta: Meta = {
     title: 'components/Icons',
@@ -104,6 +106,20 @@ export const Trophy: Story = {
 export const Reload: Story = {
     args: {
         component: ReloadIcon,
+    },
+    render: (args) => <args.component sx={{ color: 'primary.main' }} />,
+};
+
+export const Repeat: Story = {
+    args: {
+        component: RepeatIcon,
+    },
+    render: (args) => <args.component sx={{ color: 'primary.main' }} />,
+};
+
+export const Clock: Story = {
+    args: {
+        component: ClockIcon,
     },
     render: (args) => <args.component sx={{ color: 'primary.main' }} />,
 };
