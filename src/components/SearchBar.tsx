@@ -4,12 +4,12 @@ import * as style from './SearchBar.style';
 import SearchIcon from './Icons/SearchIcon';
 import { debounce } from 'lodash';
 
-type SearchBarProps = {
+interface ISearchBarProps {
     page: 'infoBoard' | 'mapPage';
     onSearch?: (searchText: string) => void;
-};
+}
 
-const SearchBar: React.FC<SearchBarProps> = ({ page, onSearch }) => {
+const SearchBar: React.FC<ISearchBarProps> = ({ page, onSearch }) => {
     const [searchText, setSearchText] = useState('');
 
     // 실시간 검색 결과가 필요한 경우 사용
@@ -66,13 +66,14 @@ const SearchBar: React.FC<SearchBarProps> = ({ page, onSearch }) => {
             />
             <IconButton
                 sx={{
-                    color: page === 'infoBoard' ? '#ffffff' : '#58883f',
+                    color: page === 'infoBoard' ? 'white' : 'livelyPrimary.2',
+                    maxWidth: '20px',
                 }}
                 onClick={() => {
                     if (onSearch) onSearch(searchText);
                 }}
             >
-                <SearchIcon />
+                <SearchIcon sx={{ fontSize: '1.3rem', paddingRight: '7px' }} />
             </IconButton>
         </Box>
     );

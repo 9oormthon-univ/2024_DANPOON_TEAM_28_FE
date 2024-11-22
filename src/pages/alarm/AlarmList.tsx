@@ -3,7 +3,7 @@ import { IAlarmProps } from '@/types/IAlarmProps';
 import Alarm from './Alarm';
 import { Divider, List, Typography } from '@mui/material';
 import dayjs from '@/utils/dayjs';
-import * as styles from './Alarm.styles';
+import * as styles from './Alarm.style';
 
 const AlarmList = ({
     timePeriod,

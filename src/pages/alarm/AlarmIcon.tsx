@@ -5,7 +5,7 @@ import {
     TrophyIcon,
 } from '@/components/Icons';
 import { Avatar, ListItemAvatar, SxProps } from '@mui/material';
-import * as styles from './Alarm.styles';
+import * as styles from './Alarm.style';
 
 const AlarmIcon = ({ type, read }: { type: string; read: boolean }) => {
     let icon: null | React.ReactNode = null;

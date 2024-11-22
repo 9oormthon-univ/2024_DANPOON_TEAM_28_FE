@@ -3,10 +3,10 @@ import {
     MissionPage,
     StatusPage,
     MapPage,
-    InfoPage,
     MyPage,
     NotFound,
 } from './pages';
+import InfoPage from './pages/info/InfoPage';
 import AlarmPage from './pages/alarm/AlarmPage';
 import LoginPage from './pages/login/LoginPage';
 

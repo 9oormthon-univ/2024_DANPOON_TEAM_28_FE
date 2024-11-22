@@ -55,8 +55,7 @@ const data: Array<IAlarmProps> = [
     },
 ];
 const AlarmPage = () => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const [alarmList, setAlarmList] = useState<Array<IAlarmProps>>(data);
+    const [alarmList, _] = useState<Array<IAlarmProps>>(data);
     const [filterUnread, setFilterUnread] = useState(false);
 
     const isPushedToday = (date: string) => {
