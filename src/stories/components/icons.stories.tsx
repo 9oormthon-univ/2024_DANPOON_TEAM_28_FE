@@ -14,8 +14,10 @@ import {
     ChevronLeftIcon,
     ChevronUpIcon,
     ChevronDownIcon,
-    ViewCountIcon
+    ViewCountIcon,
 } from '@/components/Icons';
+import RepeatIcon from '@/components/Icons/RepeatIcon';
+import ClockIcon from '@/components/Icons/ClockIcon';
 
 const meta: Meta = {
     title: 'components/Icons',
@@ -128,6 +130,20 @@ export const ChevronDown: Story = {
 export const ViewCount: Story = {
     args: {
         component: ViewCountIcon,
+    },
+    render: (args) => <args.component sx={{ color: 'primary.main' }} />,
+};
+
+export const Repeat: Story = {
+    args: {
+        component: RepeatIcon,
+    },
+    render: (args) => <args.component sx={{ color: 'primary.main' }} />,
+};
+
+export const Clock: Story = {
+    args: {
+        component: ClockIcon,
     },
     render: (args) => <args.component sx={{ color: 'primary.main' }} />,
 };
