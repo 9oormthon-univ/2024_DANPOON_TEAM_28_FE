@@ -7,7 +7,7 @@ import { debounce } from 'lodash';
 interface ISearchBarProps {
     page: 'infoBoard' | 'mapPage';
     onSearch?: (searchText: string) => void;
-};
+}
 
 const SearchBar: React.FC<ISearchBarProps> = ({ page, onSearch }) => {
     const [searchText, setSearchText] = useState('');
@@ -66,13 +66,14 @@ const SearchBar: React.FC<ISearchBarProps> = ({ page, onSearch }) => {
             />
             <IconButton
                 sx={{
-                    color: page === 'infoBoard' ? '#ffffff' : '#58883f',
+                    color: page === 'infoBoard' ? 'white' : 'livelyPrimary.2',
+                    maxWidth: '20px',
                 }}
                 onClick={() => {
                     if (onSearch) onSearch(searchText);
                 }}
             >
-                <SearchIcon />
+                <SearchIcon sx={{ fontSize: '1.5rem', paddingRight: '7px' }} />
             </IconButton>
         </Box>
     );
