@@ -17,7 +17,7 @@ export const carouselItemBoxStyle: SxProps = {
 export const carouselContainerStyle: SxProps = {
     width: '100%',
     margin: '0 auto',
-        marginTop:'4vw'
+        marginTop:'5vw'
 };
 
 export const gradientOverlayStyle: SxProps = {
@@ -48,7 +48,7 @@ export const descriptionTextStyle: SxProps<Theme> = (theme) => ({
 export const titleTextStyle: SxProps<Theme> = (theme) => ({
     whiteSpace: 'norwrap',
     [theme.breakpoints.down(360)]: {
-        fontSize: '1.2rem',
+        fontSize: '1rem',
     },
 });
 
