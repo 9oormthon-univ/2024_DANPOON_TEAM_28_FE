@@ -3,13 +3,15 @@ import { SxProps } from '@mui/material';
 export const selectContainerStyle: SxProps = {
     display: 'flex',
     justifyContent: 'flex-end',
-    midWidth: 120,
+    width: '100%',
+    marginLeft: 'auto',
+    alignItems: 'center',
+    minWidth: 120,
 };
 
 export const selectStyles: SxProps = {
     border: 'none',
     boxShadow: 'none',
-    display: 'flex-end',
     typography: 'body3Medium',
     gap:'8px',
     '.MuiOutlinedInput-notchedOutline': { border: 0 },

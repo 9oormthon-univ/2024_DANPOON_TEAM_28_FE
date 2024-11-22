@@ -4,20 +4,20 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 import * as style from './InfoSortSelect.style';
 import { ChevronDownIcon } from '@/components/Icons';
 
-export default function InfoSortSelect() {
-    const [value, setValue] = useState('최신순');
-    const [open, setOpen] = useState(false);
+interface IInfoSortSelectProps{
+    sortOption: string;
+    onSortChange: (option:string) => void;
+}
 
-    const handleChange = (event: SelectChangeEvent) => {
-        setValue(event.target.value as string);
-    };
+export default function InfoSortSelect({ sortOption, onSortChange }: IInfoSortSelectProps) {
+    const [open, setOpen] = useState(false);
 
     return (
         <Box sx={style.selectContainerStyle}>
             <FormControl variant='outlined' sx={style.formControlStyles}>
                 <Select
-                    value={value}
-                    onChange={handleChange}
+                    value={sortOption}
+                    onChange={(e) => onSortChange(e.target.value)}
                     sx={{
                         ...style.selectStyles,
                         '& .MuiSelect-icon': {
@@ -32,10 +32,10 @@ export default function InfoSortSelect() {
                     onClose={() => setOpen(false)}
                     IconComponent={ChevronDownIcon}
                 >
-                    <MenuItem value='최신순' sx={{ typography: 'body3Medium' }}>
+                    <MenuItem value='latest' sx={{ typography: 'body3Medium' }}>
                         최신순
                     </MenuItem>
-                    <MenuItem value='인기순' sx={{ typography: 'body3Medium' }}>
+                    <MenuItem value='popular' sx={{ typography: 'body3Medium' }}>
                         인기순
                     </MenuItem>
                 </Select>

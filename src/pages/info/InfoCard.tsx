@@ -26,7 +26,7 @@ export default function InfoCard({
             />
 
             <CardContent sx={style.cardContentStyle}>
-                <Typography variant="body3Medium">
+                <Typography variant="body3Medium" sx={style.titleStyle}>
                     {title}
                 </Typography>
                 <Box sx={style.dateViewContainerStyle}>

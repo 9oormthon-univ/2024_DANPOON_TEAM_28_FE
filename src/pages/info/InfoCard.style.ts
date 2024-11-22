@@ -34,3 +34,12 @@ export const viewCountTextStyle: SxProps<Theme> = {
     alignItems: 'center',
     gap: '4px',
 };
+
+export const titleStyle: SxProps<Theme> = {
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    display: '-webkit-box',
+    WebkitBoxOrient: 'vertical',
+    WebkitLineClamp: 2,
+    wordBreak: 'break-word',
+}
