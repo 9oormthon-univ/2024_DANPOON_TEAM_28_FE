@@ -1,9 +1,8 @@
-import { SxProps, styled } from '@mui/material';
-import { CSSProperties } from 'react';
+import { SxProps, Theme } from '@mui/material';
 
 export const carouselItemBoxStyle: SxProps = {
     position: 'relative',
-    width: '90%',
+    width: '100%',
     aspectRatio: '16 / 9',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
@@ -18,6 +17,7 @@ export const carouselItemBoxStyle: SxProps = {
 export const carouselContainerStyle: SxProps = {
     width: '100%',
     margin: '0 auto',
+        marginTop:'4vw'
 };
 
 export const gradientOverlayStyle: SxProps = {
@@ -37,25 +37,20 @@ export const textContainerStyle: SxProps = {
     color: 'white',
 };
 
-export const descriptionTextStyle: SxProps = {
-    color: '#FFF',
-    fontFamily: 'Pretendard',
-    fontSize: 'calc((1.5vw + 0.5rem) * 0.75)',
-    fontStyle: 'normal',
-    fontWeight: '600',
-    marginBottom: '8px',
-    lineHeight: 'calc((1.5vw + 0.5rem) * 0.9)',
-};
-
-export const titleTextStyle: SxProps = {
-    color: '#FFF',
-    fontFamily: 'SB AggroOTF',
-    fontSize: 'calc(2vw + 0.6rem)',
-    fontStyle: 'normal',
-    fontWeight: 'bold',
-    lineHeight: 'calc((1.5vw + 0.5rem) * 1.2)',
+export const descriptionTextStyle: SxProps<Theme> = (theme) => ({
     whiteSpace: 'norwrap',
-};
+    marginBottom:'3px',
+    [theme.breakpoints.down(360)]: {
+        fontSize: '0.7rem',
+    },
+});
+
+export const titleTextStyle: SxProps<Theme> = (theme) => ({
+    whiteSpace: 'norwrap',
+    [theme.breakpoints.down(360)]: {
+        fontSize: '1.2rem',
+    },
+});
 
 export const indicatorStyles = {
     container: {

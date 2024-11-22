@@ -23,10 +23,10 @@ const CarouselItem = ({ title, description, image }: ICarouselItem) => {
             <Box sx={style.gradientOverlayStyle}/>
 
             <Box sx={style.textContainerStyle}>
-                <Typography sx={style.descriptionTextStyle}>
+                <Typography variant='body3SemiBold' sx={style.descriptionTextStyle}>
                     {description}
                 </Typography>
-                <Typography sx={style.titleTextStyle}>
+                <Typography variant='heading2Medium' sx={style.titleTextStyle}>
                     {title}
                 </Typography>
             </Box>
