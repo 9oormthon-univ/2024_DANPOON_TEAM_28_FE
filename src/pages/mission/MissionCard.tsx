@@ -1,6 +1,6 @@
 import { Stack, SxProps, Theme } from '@mui/material';
-import IconBadge from './IconBadge';
-import * as styles from './Mission.style';
+import IconBadge from './missionCard/IconBadge';
+import * as styles from './missionCard/Mission.style';
 
 export interface IMissionCardProps {
     type: 'clover' | 'my' | 'number';
@@ -38,6 +38,7 @@ const MissionCard = ({
                 }}
                 direction={'row'}
                 alignItems={'center'}
+                justifyContent={'space-between'}
             >
                 {children}
             </Stack>
