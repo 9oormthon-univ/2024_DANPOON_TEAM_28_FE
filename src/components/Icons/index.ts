@@ -13,3 +13,4 @@ export { default as ReloadIcon } from './ReloadIcon';
 export { default as ChevronUpIcon } from './ChevronUpIcon';
 export { default as ChevronDownIcon } from './ChevronDownIcon';
 export { default as ViewCountIcon } from './ViewCountIcon';
+export { default as KakaoIcon } from './KakaoIcon';
