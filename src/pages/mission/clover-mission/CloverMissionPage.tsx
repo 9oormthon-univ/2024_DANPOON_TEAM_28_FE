@@ -10,8 +10,10 @@ import { useModal } from '@/hooks/useModal';
 import AlertModal from '@/components/AlertModal';
 import { useState } from 'react';
 import CloverSubContentCategory from '../missionCard/CloverSubContent';
+import { useNavigate } from 'react-router';
 
 export interface ICloverMission {
+    type: 'clover';
     id: number;
     name: string;
     category: string;
@@ -20,18 +22,23 @@ export interface ICloverMission {
 
 const data: Array<ICloverMission> = [
     {
+        type: 'clover',
         id: 1,
         name: '클로버 미션 1',
         category: '건강 챙기기',
         difficulty: 1,
     },
     {
+        type: 'clover',
+
         id: 2,
         name: '클로버 미션 2',
         category: '인간 관계',
         difficulty: 2,
     },
     {
+        type: 'clover',
+
         id: 3,
         name: '클로버 미션 3',
         category: '사회 활동',
@@ -42,11 +49,18 @@ const data: Array<ICloverMission> = [
 const CloverMissionPage = () => {
     const [selected, setSelected] = useState<number>(0);
 
+    const navigate = useNavigate();
+
     const { modalOpen, openModal, closeModal } = useModal();
 
     const handleMissionClick = (idx: number) => {
         setSelected(idx);
         openModal();
+    };
+
+    const handlePositiveClick = () => {
+        localStorage.setItem('cloverMission', JSON.stringify(data[selected]));
+        navigate('/');
     };
 
     return (
@@ -113,7 +127,7 @@ const CloverMissionPage = () => {
                 open={modalOpen}
                 onClose={closeModal}
                 handleNegativeClick={closeModal}
-                handlePositiveClick={closeModal} // TODO : 동작 수정 필요
+                handlePositiveClick={handlePositiveClick} // TODO : 동작 수정 필요
             >
                 <Stack
                     direction={'column'}
