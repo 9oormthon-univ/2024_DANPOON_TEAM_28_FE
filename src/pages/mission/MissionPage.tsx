@@ -8,6 +8,8 @@ import CloverSubContentCategory from './missionCard/CloverSubContent';
 import SubContent from './missionCard/SubContent';
 import { CheckIcon } from '@/components/Icons';
 import * as style from './mission.style';
+import { useNavigate } from 'react-router';
+import { useEffect, useState } from 'react';
 
 interface ICloverMission {
     type: 'clover';
@@ -32,19 +34,21 @@ interface IMissionPage {
     missionClearCount: number;
     missionList: Array<ICloverMission | IMyMission>;
 }
+const storedMission = localStorage.getItem('cloverMission');
 
-const data: IMissionPage = {
+const finishedCloverMission: ICloverMission = {
+    id: 4,
+    type: 'clover',
+    name: '미션 1',
+    category: '건강 챙기기',
+    difficulty: 1,
+    finished: true,
+};
+
+const missionData: IMissionPage = {
     cloverClearCount: 1,
     missionClearCount: 1,
     missionList: [
-        {
-            id: 1,
-            type: 'clover',
-            name: '미션 1',
-            category: '건강 챙기기',
-            difficulty: 1,
-            finished: false,
-        },
         {
             type: 'my',
             id: 2,
@@ -59,14 +63,7 @@ const data: IMissionPage = {
             ringAt: '16:00',
             finished: false,
         },
-        {
-            id: 4,
-            type: 'clover',
-            name: '미션 1',
-            category: '건강 챙기기',
-            difficulty: 1,
-            finished: true,
-        },
+
         {
             type: 'my',
             id: 5,
@@ -85,6 +82,46 @@ const data: IMissionPage = {
 };
 
 const MissionPage = () => {
+    const [data, setData] = useState(missionData);
+    const navigate = useNavigate();
+    const handleCloverMissionClick = () => {
+        navigate('/clover-mission');
+    };
+
+    const handleMissionFinished = () => {
+        navigate('/mission-complete');
+    };
+    useEffect(() => {
+        const storedMission = localStorage.getItem('cloverMission');
+        setData((prev) => {
+            let updatedMissionList = [...prev.missionList];
+
+            if (storedMission) {
+                const cloverMission = JSON.parse(storedMission);
+
+                // 이미 존재하는 미션이 아닌 경우에만 추가
+                if (
+                    !updatedMissionList.some(
+                        (mission) => mission.id === cloverMission.id
+                    )
+                ) {
+                    updatedMissionList.unshift(cloverMission);
+                }
+            } else {
+                // 로컬스토리지에 값이 없으면 기본 미션 추가
+                if (
+                    !updatedMissionList.some(
+                        (mission) => mission.id === finishedCloverMission.id
+                    )
+                ) {
+                    updatedMissionList.unshift(finishedCloverMission);
+                }
+            }
+
+            return { ...prev, missionList: updatedMissionList };
+        });
+    }, []);
+
     return (
         <Layout removePadding>
             <Header padding />
@@ -108,9 +145,15 @@ const MissionPage = () => {
                 {data.missionList.map((mission) => (
                     <Button
                         key={mission.id}
-                        onClick={() => console.log(mission)}
                         sx={style.missionCardContainerStyle}
                         disabled={mission.finished && mission.type === 'my'}
+                        onClick={() => {
+                            if (mission.finished && mission.type === 'clover') {
+                                handleCloverMissionClick();
+                            } else {
+                                handleMissionFinished();
+                            }
+                        }}
                     >
                         <MissionCard
                             type={mission.type}
