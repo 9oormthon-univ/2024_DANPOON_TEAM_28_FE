@@ -8,9 +8,7 @@ import { IMissionCompleteForm } from '@/types/IMissionCompleteForm';
 const meta: Meta<IDifficultyRadioProps> = {
     title: 'mission-complete/DifficultyRadio',
     component: DifficultyRadio,
-    argTypes: {
-        onChange: { action: 'changed' }, // Storybook의 액션 로깅 설정
-    },
+    argTypes: {},
 };
 
 export default meta;
