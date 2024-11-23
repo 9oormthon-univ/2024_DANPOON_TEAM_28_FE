@@ -15,9 +15,14 @@ import {
     ChevronUpIcon,
     ChevronDownIcon,
     ViewCountIcon,
+    GPSIcon,
+    RepeatIcon,
+    ClockIcon,
+    CounselorIcon,
+    HealingIcon,
+    LeafIcon,
+    LibraryIcon,
 } from '@/components/Icons';
-import RepeatIcon from '@/components/Icons/RepeatIcon';
-import ClockIcon from '@/components/Icons/ClockIcon';
 
 const meta: Meta = {
     title: 'components/Icons',
@@ -144,6 +149,41 @@ export const Repeat: Story = {
 export const Clock: Story = {
     args: {
         component: ClockIcon,
+    },
+    render: (args) => <args.component sx={{ color: 'primary.main' }} />,
+};
+
+export const Counselor: Story = {
+    args: {
+        component: CounselorIcon,
+    },
+    render: (args) => <args.component sx={{ color: 'primary.main' }} />,
+};
+
+export const Healing: Story = {
+    args: {
+        component: HealingIcon,
+    },
+    render: (args) => <args.component sx={{ color: 'primary.main' }} />,
+};
+
+export const Leaf: Story = {
+    args: {
+        component: LeafIcon,
+    },
+    render: (args) => <args.component sx={{ color: 'primary.main' }} />,
+};
+
+export const Library: Story = {
+    args: {
+        component: LibraryIcon,
+    },
+    render: (args) => <args.component sx={{ color: 'primary.main' }} />,
+};
+
+export const GPS: Story = {
+    args: {
+        component: GPSIcon,
     },
     render: (args) => <args.component sx={{ color: 'primary.main' }} />,
 };
