@@ -2,16 +2,26 @@ import Layout from '@/layouts/Layout';
 import { useForm } from 'react-hook-form';
 import { IMissionCompleteForm } from '@/types/IMissionCompleteForm';
 import DifficultyRadio from './DifficultyRadio';
-import { Button, TextField, Typography } from '@mui/material';
+import { Avatar, Button, Stack, TextField, Typography } from '@mui/material';
+import ImageUploadButton from '@/components/ImageUploadButton';
+import { useState } from 'react';
+import Stamp from '@/assets/mission/stamp.png';
 
 const MissionCompletePage = () => {
-    const { control, handleSubmit } = useForm<IMissionCompleteForm>({});
+    const [previewImage, setPreviewImage] = useState<string>('');
+
+    const { control, handleSubmit, register } = useForm<IMissionCompleteForm>(
+        {}
+    );
     return (
         <Layout removeBottomNavigation>
-            <form
+            <Stack
+                component={'form'}
                 onSubmit={handleSubmit((data) => {
                     console.log(data);
                 })}
+                direction={'column'}
+                alignItems={'center'}
             >
                 <Typography
                     variant={'heading1Medium'}
@@ -22,6 +32,36 @@ const MissionCompletePage = () => {
                     <br />한 발짝 나아갔어요!
                 </Typography>
                 <Typography>{'물 한 컵 마시기 성공!'}</Typography>
+
+                <ImageUploadButton
+                    setPreviewImage={setPreviewImage}
+                    register={register('image')}
+                    sx={{
+                        borderRadius: '50%',
+                        width: 'fit-content',
+                        height: 'fit-content',
+                    }}
+                >
+                    <Avatar
+                        src={previewImage}
+                        sx={{
+                            width: '13rem',
+                            height: '13rem',
+                            backgroundColor: 'transparent',
+                        }}
+                    >
+                        <img src={Stamp} alt={'stamp'} />
+                    </Avatar>
+                </ImageUploadButton>
+                <Button sx={{ p: 0 }}>
+                    <Typography
+                        variant={'body3Regular'}
+                        color={'#aaa'}
+                        sx={{ textDecoration: 'underline' }}
+                    >
+                        {'사진 찍기'}
+                    </Typography>
+                </Button>
                 <TextField />
                 <Typography
                     variant={'body3SemiBold'}
@@ -38,7 +78,7 @@ const MissionCompletePage = () => {
                 >
                     {'완료'}
                 </Button>
-            </form>
+            </Stack>
         </Layout>
     );
 };
