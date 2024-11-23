@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import DifficultyRadio, {
     IDifficultyRadioProps,
 } from '@/pages/mission/mission-complete/DifficultyRadio';
+import { IMissionCompleteForm } from '@/types/IMissionCompleteForm';
 
 const meta: Meta<IDifficultyRadioProps> = {
     title: 'mission-complete/DifficultyRadio',
@@ -16,13 +17,11 @@ export default meta;
 
 type Story = StoryObj<IDifficultyRadioProps>;
 
-// 기본 예제
 export const Default: Story = {
     render: (args) => {
-        // React Hook Form 초기화
-        const { control } = useForm({
+        const { control } = useForm<IMissionCompleteForm>({
             defaultValues: {
-                difficulty: 'option1', // 초기값 설정
+                difficulty: undefined,
             },
         });
 
@@ -33,18 +32,12 @@ export const Default: Story = {
 // 사용자 지정 예제
 export const CustomOptions: Story = {
     render: (args) => {
-        const { control } = useForm({
+        const { control } = useForm<IMissionCompleteForm>({
             defaultValues: {
-                difficulty: 'option2', // 초기값 설정
+                difficulty: undefined,
             },
         });
 
-        return (
-            <DifficultyRadio
-                {...args}
-                control={control}
-                onChange={(e) => console.log('Selected:', e.target.value)}
-            />
-        );
+        return <DifficultyRadio {...args} control={control} />;
     },
 };

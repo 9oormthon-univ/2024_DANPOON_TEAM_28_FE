@@ -1,13 +1,13 @@
 import { ToggleButton, ToggleButtonGroup } from '@mui/material';
 import { Control, Controller } from 'react-hook-form';
 import Difficulty from './Difficulty';
+import { IMissionCompleteForm } from '@/types/IMissionCompleteForm';
 
 export interface IDifficultyRadioProps {
-    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    control: Control<any, any>;
+    control: Control<IMissionCompleteForm, any>;
 }
 
-const DifficultyRadio = ({ control, onChange }: IDifficultyRadioProps) => {
+const DifficultyRadio = ({ control }: IDifficultyRadioProps) => {
     const difficultyOptions = [2, 1, 0];
     return (
         <Controller
@@ -16,21 +16,27 @@ const DifficultyRadio = ({ control, onChange }: IDifficultyRadioProps) => {
             render={({ field }) => (
                 <ToggleButtonGroup
                     value={field.value}
-                    exclusive // 하나의 옵션만 선택 가능
+                    exclusive
                     onChange={(_, value) => {
-                        // 선택 해제 방지
                         if (value !== null) field.onChange(value);
                     }}
                     aria-label='options'
+                    sx={{
+                        '& .MuiToggleButton-root': {
+                            border: 'none',
+                        },
+                        '& .Mui-selected': {
+                            backgroundColor: 'transparent !important',
+                        },
+                    }}
                 >
                     {difficultyOptions.map((option) => (
                         <ToggleButton
                             key={option}
                             value={option}
                             aria-label={`option${option}`}
-                            onChange={onChange}
                         >
-                            <Difficulty level={option} selected={null} />
+                            <Difficulty level={option} selected={field.value} />
                         </ToggleButton>
                     ))}
                 </ToggleButtonGroup>
