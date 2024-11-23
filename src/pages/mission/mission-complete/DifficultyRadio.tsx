@@ -28,6 +28,7 @@ const DifficultyRadio = ({ control }: IDifficultyRadioProps) => {
                         '& .Mui-selected': {
                             backgroundColor: 'transparent !important',
                         },
+                        px: '0.75rem',
                     }}
                 >
                     {difficultyOptions.map((option) => (
