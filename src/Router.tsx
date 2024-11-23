@@ -1,4 +1,5 @@
 import { createBrowserRouter, redirect } from 'react-router-dom';
+
 import {
   MissionPage,
   StatusPage,
@@ -10,6 +11,7 @@ import {
 import InfoPage from './pages/info/InfoPage';
 import AlarmPage from './pages/alarm/AlarmPage';
 import LoginPage from './pages/login/LoginPage';
+import KakaoCallback from './pages/login/KakaoCallback';
 
 export const RouterPath = {
   splash: '/',
@@ -20,6 +22,7 @@ export const RouterPath = {
   myPage: '/my-page',
   alarm: '/alarm',
   login: '/login',
+  authCallback: '/auth/callback',
   notFound: '*',
 };
 
@@ -55,6 +58,10 @@ const router = createBrowserRouter([
   {
     path: RouterPath.login,
     element: <LoginPage />,
+  },
+  {
+    path: RouterPath.authCallback,
+    element: <KakaoCallback />,
   },
   {
     path: RouterPath.notFound,

@@ -8,6 +8,13 @@ export default defineConfig({
   server: {
     port: 3000,
     open: true,
+    // proxy: {
+    //   '/api': {
+    //     target: 'http://52.79.143.14:8080',
+    //     changeOrigin: true,
+    //     secure: false,
+    //   },
+    // },
   },
   resolve: {
     alias: {

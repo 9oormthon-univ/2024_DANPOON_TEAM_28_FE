@@ -2,8 +2,12 @@ import { Paper, Typography, Link, Box } from '@mui/material';
 import KakaoLoginBtn from './KakaoLoginBtn';
 import Logo from '@/components/Logo';
 import * as style from './LoginPage.style';
+import { KAKAO_AUTH_URL } from '@/config/env';
+
 
 const LoginPage = () => {
+    const link: string = KAKAO_AUTH_URL;
+
     return (
         <Box sx={style.rootBoxStyle}>
             <Paper sx={style.paperStyle}>
@@ -28,7 +32,7 @@ const LoginPage = () => {
                 <Box sx={style.buttonBoxStyle}>
                     <KakaoLoginBtn
                         onClick={() => {
-                            alert('카카오 로그인 시도!');
+                            window.location.href = link;
                         }}
                     />
                 </Box>
