@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import MapPage from '@/map/MapPage';
+import MapPage from '@/pages/map/MapPage';
 
 const meta: Meta = {
     title: 'map/MapPage',

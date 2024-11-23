@@ -1,13 +1,6 @@
-export interface IPlaceData {
-    lat: number;
-    lng: number;
-    placeName: string;
-    address: string;
-    siteUrl?: string;
-    oneIntro: string;
-}
+import { IPlaceData } from '@/types/IPlaceData';
 
-const placeData: Array<IPlaceData> = [
+export const placeData: Array<IPlaceData> = [
     {
         lat: 37.5648926,
         lng: 127.0866036,
