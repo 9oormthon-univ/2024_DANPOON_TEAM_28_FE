@@ -5,11 +5,12 @@ import good from '@/assets/difficulty/good.svg';
 
 export interface IDifficultyProps {
     level: number;
+    selected: null | number;
 }
 
 const Difficulty = ({ level }: IDifficultyProps) => {
-    const difficultyImage = [bad, normal, good];
-    const difficultyText = ['좀 힘들었어요', '적당해요', '너무 쉬웠어요'];
+    const difficultyImage = [good, normal, bad];
+    const difficultyText = ['너무 쉬웠어요', '적당해요', '좀 힘들었어요'];
     return (
         <Stack
             direction={'column'}

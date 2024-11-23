@@ -14,17 +14,20 @@ type Story = StoryObj<typeof meta>;
 export const level0: Story = {
     args: {
         level: 0,
+        selected: null,
     },
 };
 
 export const level1: Story = {
     args: {
         level: 1,
+        selected: null,
     },
 };
 
 export const level2: Story = {
     args: {
         level: 2,
+        selected: null,
     },
 };
