@@ -23,6 +23,11 @@ const MissionCompletePage = () => {
     const navigation = useNavigate();
 
     const { control, handleSubmit, setValue } = useForm<IMissionCompleteForm>();
+
+    const returnToMissionPage = () => {
+        navigation(-1);
+    };
+
     return (
         <Layout removeBottomNavigation>
             <Stack
@@ -52,7 +57,7 @@ const MissionCompletePage = () => {
             <Stack
                 component={'form'}
                 onSubmit={handleSubmit((data) => {
-                    console.log(data);
+                    navigation(-1);
                 })}
                 direction={'column'}
                 alignItems={'center'}
