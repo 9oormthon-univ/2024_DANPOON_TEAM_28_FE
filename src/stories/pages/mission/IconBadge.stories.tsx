@@ -1,5 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
-import IconBadge, { IIconBadgeProps } from '@/pages/mission/IconBadge';
+import IconBadge, {
+    IIconBadgeProps,
+} from '@/pages/mission/missionCard/IconBadge';
 
 const meta: Meta<IIconBadgeProps> = {
     title: 'mission/IconBadge',

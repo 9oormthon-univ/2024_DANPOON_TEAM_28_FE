@@ -1,5 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { MissionPage, StatusPage, InfoPage, MyPage, NotFound } from './pages';
+import { MissionPage, StatusPage, MyPage, NotFound } from './pages';
+import InfoPage from './pages/info/InfoPage';
 import AlarmPage from './pages/alarm/AlarmPage';
 import MapPage from './pages/map/MapPage';
 
