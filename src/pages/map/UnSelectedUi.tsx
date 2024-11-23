@@ -1,4 +1,5 @@
-import { Divider, Stack } from '@mui/material';
+import { GPSIcon } from '@/components/Icons';
+import { Stack, Typography } from '@mui/material';
 
 const UnSelectedUi = () => {
     return (
@@ -25,6 +26,17 @@ const UnSelectedUi = () => {
                     borderColor: '#F3F3F3',
                 }}
             />
+            <Stack spacing={1} direction={'row'}>
+                <GPSIcon
+                    sx={{
+                        fontSize: '1rem',
+                        color: 'livelyPrimary.2',
+                    }}
+                />
+                <Typography variant={'body4SemiBold'}>
+                    {'서울특별시 광진구 자양동'}
+                </Typography>
+            </Stack>
         </Stack>
     );
 };

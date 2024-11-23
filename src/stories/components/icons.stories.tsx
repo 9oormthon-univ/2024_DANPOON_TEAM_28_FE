@@ -15,13 +15,14 @@ import {
     ChevronUpIcon,
     ChevronDownIcon,
     ViewCountIcon,
+    GPSIcon,
+    RepeatIcon,
+    ClockIcon,
+    CounselorIcon,
+    HealingIcon,
+    LeafIcon,
+    LibraryIcon,
 } from '@/components/Icons';
-import RepeatIcon from '@/components/Icons/RepeatIcon';
-import ClockIcon from '@/components/Icons/ClockIcon';
-import CounselorIcon from '@/components/Icons/CounselorIcon';
-import HealingIcon from '@/components/Icons/HealingIcon';
-import LeafIcon from '@/components/Icons/LeafIcon';
-import LibraryIcon from '@/components/Icons/LibraryIcon';
 
 const meta: Meta = {
     title: 'components/Icons',
@@ -176,6 +177,13 @@ export const Leaf: Story = {
 export const Library: Story = {
     args: {
         component: LibraryIcon,
+    },
+    render: (args) => <args.component sx={{ color: 'primary.main' }} />,
+};
+
+export const GPS: Story = {
+    args: {
+        component: GPSIcon,
     },
     render: (args) => <args.component sx={{ color: 'primary.main' }} />,
 };
