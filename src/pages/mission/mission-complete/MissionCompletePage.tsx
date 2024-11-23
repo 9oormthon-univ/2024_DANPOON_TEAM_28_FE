@@ -10,7 +10,7 @@ import Stamp from '@/assets/mission/stamp.png';
 const MissionCompletePage = () => {
     const [previewImage, setPreviewImage] = useState<string>('');
 
-    const { control, handleSubmit, register } = useForm<IMissionCompleteForm>(
+    const { control, handleSubmit, setValue } = useForm<IMissionCompleteForm>(
         {}
     );
     return (
@@ -35,12 +35,12 @@ const MissionCompletePage = () => {
 
                 <ImageUploadButton
                     setPreviewImage={setPreviewImage}
-                    register={register('image')}
                     sx={{
                         borderRadius: '50%',
                         width: 'fit-content',
                         height: 'fit-content',
                     }}
+                    setValue={(image: File) => setValue('image', image)}
                 >
                     <Avatar
                         src={previewImage}
