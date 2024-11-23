@@ -15,6 +15,7 @@ import {
     ChevronUpIcon,
     ChevronDownIcon,
     ViewCountIcon,
+    KakaoIcon
 } from '@/components/Icons';
 import RepeatIcon from '@/components/Icons/RepeatIcon';
 import ClockIcon from '@/components/Icons/ClockIcon';
@@ -130,6 +131,13 @@ export const ChevronDown: Story = {
 export const ViewCount: Story = {
     args: {
         component: ViewCountIcon,
+    },
+    render: (args) => <args.component sx={{ color: 'primary.main' }} />,
+};
+
+export const Kakao: Story = {
+    args: {
+        component: KakaoIcon,
     },
     render: (args) => <args.component sx={{ color: 'primary.main' }} />,
 };

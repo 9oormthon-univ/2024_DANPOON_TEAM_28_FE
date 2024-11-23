@@ -1,43 +1,72 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, redirect } from 'react-router-dom';
+
 import {
-    MissionPage,
-    StatusPage,
-    MapPage,
-    MyPage,
-    NotFound,
+  MissionPage,
+  StatusPage,
+  MapPage,
+  MyPage,
+  NotFound,
+  SplashPage,
 } from './pages';
 import InfoPage from './pages/info/InfoPage';
 import AlarmPage from './pages/alarm/AlarmPage';
+import LoginPage from './pages/login/LoginPage';
+import KakaoCallback from './pages/login/KakaoCallback';
+
+export const RouterPath = {
+  splash: '/',
+  mission: '/mission',
+  status: '/status',
+  map: '/map',
+  info: '/info',
+  myPage: '/my-page',
+  alarm: '/alarm',
+  login: '/login',
+  authCallback: '/auth/callback',
+  notFound: '*',
+};
 
 const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <MissionPage />,
-    },
-    {
-        path: '/status',
-        element: <StatusPage />,
-    },
-    {
-        path: '/map',
-        element: <MapPage />,
-    },
-    {
-        path: '/info',
-        element: <InfoPage />,
-    },
-    {
-        path: '/my-page',
-        element: <MyPage />,
-    },
-    {
-        path: '/alarm',
-        element: <AlarmPage />,
-    },
-    {
-        path: '*',
-        element: <NotFound />,
-    },
+  {
+    path: RouterPath.splash,
+    element: <SplashPage />,
+  },
+  {
+    path: RouterPath.mission,
+    element: <MissionPage />,
+  },
+  {
+    path: RouterPath.status,
+    element: <StatusPage />,
+  },
+  {
+    path: RouterPath.map,
+    element: <MapPage />,
+  },
+  {
+    path: RouterPath.info,
+    element: <InfoPage />,
+  },
+  {
+    path: RouterPath.myPage,
+    element: <MyPage />,
+  },
+  {
+    path: RouterPath.alarm,
+    element: <AlarmPage />,
+  },
+  {
+    path: RouterPath.login,
+    element: <LoginPage />,
+  },
+  {
+    path: RouterPath.authCallback,
+    element: <KakaoCallback />,
+  },
+  {
+    path: RouterPath.notFound,
+    element: <NotFound />,
+  },
 ]);
 
 export default router;
