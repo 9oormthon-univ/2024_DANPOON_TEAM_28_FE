@@ -13,14 +13,14 @@ export const infoBoardStyle: SxProps<Theme> = {
     flexShrink: 0,
     borderRadius: '30px',
     background: 'var(--2, #478932)',
-    boxSizing:'border-box'
+    boxSizing: 'border-box',
 };
 
 // mapPage 스타일
 export const mapPageStyle: SxProps<Theme> = {
     display: 'flex',
-    width: '100%',
-    height: '7.5vw',
+    width: 'calc(100% - 2rem)',
+    height: '2.5rem',
     maxHeight: '5%',
     padding: '10px 16px 10px 20px',
     flexDirection: 'row',
@@ -30,7 +30,10 @@ export const mapPageStyle: SxProps<Theme> = {
     borderRadius: '30px',
     background: 'var(--Backgrounds-Primary, #FFF)',
     boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
-    boxSizing:'border-box'
+    boxSizing: 'border-box',
+    zIndex: 200,
+    position: 'absolute',
+    top: '1rem',
 };
 
 export const inputBaseStyle: SxProps<Theme> = {

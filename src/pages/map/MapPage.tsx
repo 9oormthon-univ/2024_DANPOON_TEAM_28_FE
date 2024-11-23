@@ -8,6 +8,7 @@ import default_marker from '@/assets/map/default_marker.svg';
 import selected_marker from '@/assets/map/selected_marker.svg';
 import UnSelectedUi from './UnSelectedUi';
 import SelectedUi from './SelectedUi';
+import SearchBar from '@/components/SearchBar';
 
 const MapPage = () => {
     const [selected, setSelected] = useState<IPlaceData | null>(null);
@@ -115,12 +116,13 @@ const MapPage = () => {
 
     return (
         <Layout removePadding removeBottomNavigation={!!selected}>
+            <SearchBar onSearch={() => {}} page='mapPage' />
             {/* 지도 영역 */}
             <div
                 id='map'
                 style={{
                     width: '100%',
-                    height: '100vh',
+                    height: '100svh',
                     border: '1px solid #ddd',
                 }}
             />
