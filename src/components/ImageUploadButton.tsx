@@ -1,4 +1,4 @@
-import { Button, SxProps } from '@mui/material';
+import { Button, SxProps, Theme } from '@mui/material';
 import { UseFormRegisterReturn } from 'react-hook-form';
 import watermarkImageSrc from '@/assets/mission/stamp.png';
 
@@ -20,7 +20,7 @@ const ImageUploadButton = ({
     onChange?: () => void;
     register?: UseFormRegisterReturn;
     disabled?: boolean;
-    sx?: SxProps;
+    sx?: SxProps | SxProps<Theme>;
     setValue: (image: File) => void;
 }) => {
     const addWatermark = async (file: File): Promise<File> => {

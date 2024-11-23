@@ -14,9 +14,13 @@ import ImageUploadButton from '@/components/ImageUploadButton';
 import { useState } from 'react';
 import Stamp from '@/assets/mission/stamp.png';
 import { ChevronLeftIcon } from '@/components/Icons';
+import { useNavigate } from 'react-router-dom';
+import * as style from './MissionComplete.style';
 
 const MissionCompletePage = () => {
     const [previewImage, setPreviewImage] = useState<string>('');
+
+    const navigation = useNavigate();
 
     const { control, handleSubmit, setValue } = useForm<IMissionCompleteForm>();
     return (
@@ -25,24 +29,15 @@ const MissionCompletePage = () => {
                 direction={'row'}
                 alignItems={'flex-start'}
                 justifyContent={'space-between'}
-                sx={{
-                    width: '100%',
-                    paddingTop: '1.5rem',
-                    paddingBottom: '1rem',
-                }}
+                sx={style.headerStyle}
             >
                 <IconButton
-                    sx={{
-                        p: 0,
+                    sx={{ p: 0 }}
+                    onClick={() => {
+                        navigation(-1);
                     }}
                 >
-                    <ChevronLeftIcon
-                        sx={{
-                            color: 'livelyPrimary.2',
-                            width: '0.5rem',
-                            height: '1rem',
-                        }}
-                    />
+                    <ChevronLeftIcon sx={style.chevronLeftIconStyle} />
                 </IconButton>
                 <Typography
                     variant={'heading1Medium'}
@@ -61,64 +56,32 @@ const MissionCompletePage = () => {
                 })}
                 direction={'column'}
                 alignItems={'center'}
-                sx={{
-                    width: '100%',
-                    maxWidth: '20rem',
-                }}
+                sx={style.formStyle}
             >
                 <Stack
                     direction={'column'}
                     alignItems={'center'}
                     justifyContent={'center'}
-                    sx={{
-                        textAlign: 'center',
-                        px: '1.5rem',
-                        backgroundColor: 'livelyPrimary.2',
-                        color: '#fff',
-                        marginBottom: '1rem',
-                        borderRadius: '1.25rem',
-                        height: '2rem',
-                    }}
+                    sx={style.completedMissionStyle}
                 >
                     <Typography variant={'body2'}>
                         {'물 한 컵 마시기 성공!'}
                     </Typography>
                 </Stack>
-
                 <ImageUploadButton
                     setPreviewImage={setPreviewImage}
-                    sx={{
-                        borderRadius: '50%',
-                        width: 'fit-content',
-                        height: 'fit-content',
-                        padding: 0,
-                        marginBottom: '0.75rem',
-                    }}
+                    sx={style.imageUploadButtonStyle}
                     setValue={(image: File) => setValue('image', image)}
                 >
-                    <Avatar
-                        src={previewImage}
-                        sx={{
-                            width: '13rem',
-                            height: '13rem',
-                            backgroundColor: 'transparent',
-                        }}
-                    >
+                    <Avatar src={previewImage} sx={style.defaultImageStyle}>
                         <img src={Stamp} alt={'stamp'} />
                     </Avatar>
                 </ImageUploadButton>
-                <Button
-                    sx={{
-                        p: 0,
-                        mb: '1rem',
-                    }}
-                >
+                <Button sx={{ p: 0, mb: '1rem' }}>
                     <Typography
                         variant={'body3Regular'}
                         color={'#aaa'}
-                        sx={{
-                            borderBottom: '1px solid #aaa',
-                        }}
+                        sx={{ borderBottom: '1px solid #aaa' }}
                     >
                         {'인증샷 찍기'}
                     </Typography>
@@ -133,38 +96,7 @@ const MissionCompletePage = () => {
                             multiline
                             fullWidth
                             rows={4}
-                            sx={{
-                                mb: '1.5rem',
-                                width: '100%',
-                                maxWidth: '20rem',
-                                '& label.Mui-focused': {
-                                    color: '#000',
-                                },
-                                '& .MuiInput-underline:after': {
-                                    border: 'none',
-                                },
-                                '& .MuiOutlinedInput-root': {
-                                    padding: '1.25rem',
-                                    borderRadius: '1rem',
-                                    backgroundColor: 'livelyPrimary.4',
-                                    '& fieldset': {
-                                        border: 'none',
-                                    },
-                                    '&:hover fieldset': {
-                                        border: 'none',
-                                    },
-                                    '&.Mui-focused fieldset': {
-                                        border: 'none',
-                                    },
-                                },
-                                '& .MuiInputBase-input': {
-                                    fontFamily: 'Pretendard',
-                                    fontSize: '0.9375rem',
-                                    fontStyle: 'normal',
-                                    fontWeight: 400,
-                                    lineHeight: '1.25rem',
-                                },
-                            }}
+                            sx={style.textFieldStyle}
                         />
                     )}
                 />
@@ -172,11 +104,8 @@ const MissionCompletePage = () => {
                     variant={'body3SemiBold'}
                     color={'#000'}
                     textAlign={'left'}
-                    sx={{
-                        width: '100%',
-                        paddingLeft: '0.25rem',
-                        mb: '0.75rem',
-                    }}
+                    sx={style.missionDifficultyLabelStyle}
+                    id={'mission-difficulty-label'}
                 >
                     미션 난이도가 어땠는지 알려주세요
                 </Typography>
@@ -185,9 +114,15 @@ const MissionCompletePage = () => {
                 <Button
                     variant={'contained'}
                     type={'submit'}
-                    sx={{ width: '100%', my: '1.5rem' }}
+                    sx={style.missionCompleteSaveStyle}
                 >
-                    {'완료'}
+                    <Typography
+                        variant={'body3Medium'}
+                        color={'#fff'}
+                        sx={{ width: '100%' }}
+                    >
+                        {'완료'}
+                    </Typography>
                 </Button>
             </Stack>
         </Layout>

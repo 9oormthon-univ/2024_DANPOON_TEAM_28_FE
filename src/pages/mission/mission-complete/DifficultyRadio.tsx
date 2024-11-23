@@ -15,6 +15,7 @@ const DifficultyRadio = ({ control }: IDifficultyRadioProps) => {
             name={'difficulty'}
             render={({ field }) => (
                 <ToggleButtonGroup
+                    aria-labelledby='mission-difficulty-label'
                     value={field.value}
                     exclusive
                     onChange={(_, value) => {
