@@ -18,6 +18,10 @@ import {
 } from '@/components/Icons';
 import RepeatIcon from '@/components/Icons/RepeatIcon';
 import ClockIcon from '@/components/Icons/ClockIcon';
+import CounselorIcon from '@/components/Icons/CounselorIcon';
+import HealingIcon from '@/components/Icons/HealingIcon';
+import LeafIcon from '@/components/Icons/LeafIcon';
+import LibraryIcon from '@/components/Icons/LibraryIcon';
 
 const meta: Meta = {
     title: 'components/Icons',
@@ -144,6 +148,34 @@ export const Repeat: Story = {
 export const Clock: Story = {
     args: {
         component: ClockIcon,
+    },
+    render: (args) => <args.component sx={{ color: 'primary.main' }} />,
+};
+
+export const Counselor: Story = {
+    args: {
+        component: CounselorIcon,
+    },
+    render: (args) => <args.component sx={{ color: 'primary.main' }} />,
+};
+
+export const Healing: Story = {
+    args: {
+        component: HealingIcon,
+    },
+    render: (args) => <args.component sx={{ color: 'primary.main' }} />,
+};
+
+export const Leaf: Story = {
+    args: {
+        component: LeafIcon,
+    },
+    render: (args) => <args.component sx={{ color: 'primary.main' }} />,
+};
+
+export const Library: Story = {
+    args: {
+        component: LibraryIcon,
     },
     render: (args) => <args.component sx={{ color: 'primary.main' }} />,
 };
