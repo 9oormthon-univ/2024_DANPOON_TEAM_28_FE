@@ -17,6 +17,9 @@ const meta: Meta = {
             </Layout>
         ),
     ],
+    parameters: {
+        layout: 'fullscreen',
+    },
 };
 
 export default meta;

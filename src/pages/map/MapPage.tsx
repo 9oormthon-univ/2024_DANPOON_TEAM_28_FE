@@ -6,11 +6,13 @@ import { IPlaceData } from '@/types/IPlaceData';
 
 import default_marker from '@/assets/map/default_marker.svg';
 import selected_marker from '@/assets/map/selected_marker.svg';
+import UnSelectedUi from './UnSelectedUi';
+import SelectedUi from './SelectedUi';
 
 const MapPage = () => {
     const [selected, setSelected] = useState<IPlaceData | null>(null);
     const [markers, setMarkers] = useState<Record<string, any>>({});
-    const [map, setMap] = useState<any>(null); // Kakao 지도 객체 저장
+    const [_, setMap] = useState<any>(null); // Kakao 지도 객체 저장
 
     useEffect(() => {
         // Kakao 지도 SDK 로드 함수
@@ -112,7 +114,7 @@ const MapPage = () => {
     }, [selected, markers]);
 
     return (
-        <Layout removePadding>
+        <Layout removePadding removeBottomNavigation={!!selected}>
             {/* 지도 영역 */}
             <div
                 id='map'
@@ -124,49 +126,8 @@ const MapPage = () => {
             />
 
             {/* 하단 정보 표시 영역 */}
-            <Stack
-                sx={{
-                    width: '100%',
-                    height: '16.25rem',
-                    zIndex: 200,
-                    position: 'absolute',
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    backgroundColor: 'white',
-                    padding: '1rem',
-                }}
-            >
-                <Divider />
-                {selected ? (
-                    <div>
-                        <Typography variant='h6' sx={{ mt: 2 }}>
-                            {selected.placeName}
-                        </Typography>
-                        <Typography variant='body1' sx={{ mt: 1 }}>
-                            {selected.address}
-                        </Typography>
-                        {selected.siteUrl && (
-                            <a
-                                href={selected.siteUrl}
-                                target='_blank'
-                                rel='noopener noreferrer'
-                                style={{
-                                    marginTop: '0.5rem',
-                                    display: 'block',
-                                    color: '#007aff',
-                                }}
-                            >
-                                Visit Website
-                            </a>
-                        )}
-                    </div>
-                ) : (
-                    <Typography variant='body1' sx={{ mt: 2 }}>
-                        마커를 클릭하여 정보를 확인하세요.
-                    </Typography>
-                )}
-            </Stack>
+
+            {selected ? <SelectedUi {...selected} /> : <UnSelectedUi />}
         </Layout>
     );
 };

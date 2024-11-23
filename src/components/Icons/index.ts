@@ -20,3 +20,4 @@ export { default as HealingIcon } from '@/components/Icons/HealingIcon';
 export { default as LeafIcon } from '@/components/Icons/LeafIcon';
 export { default as LibraryIcon } from '@/components/Icons/LibraryIcon';
 export { default as GPSIcon } from '@/components/Icons/GPSIcon';
+export { default as GlobalIcon } from '@/components/Icons/GlobalIcon';
