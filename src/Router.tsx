@@ -1,13 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
-import {
-    MissionPage,
-    StatusPage,
-    MapPage,
-    InfoPage,
-    MyPage,
-    NotFound,
-} from './pages';
+import { MissionPage, StatusPage, InfoPage, MyPage, NotFound } from './pages';
 import AlarmPage from './pages/alarm/AlarmPage';
+import MapPage from './map/MapPage';
 
 const router = createBrowserRouter([
     {
